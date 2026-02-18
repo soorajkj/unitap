@@ -1,6 +1,6 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist_Mono, Inter } from "next/font/google";
 
-const sans = Geist({
+const sans = Inter({
   variable: "--font-sans",
   subsets: ["latin"],
   display: "swap",

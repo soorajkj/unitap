@@ -12,7 +12,7 @@ const competitors = [
     sentiment: 86,
     position: 2.7,
     logo: "S",
-    color: "bg-orange-500",
+    color: "bg-violet-500",
   },
   {
     id: 2,

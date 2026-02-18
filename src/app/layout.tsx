@@ -4,6 +4,7 @@ import ThemeProvider from "@/components/ThemeProvider";
 import Toaster from "@/components/Toaster";
 import fonts from "@/lib/fonts";
 import "./globals.css";
+import { cn } from "tailwind-variants";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -12,7 +13,11 @@ export const metadata: Metadata = {
 
 export default function Layout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" suppressHydrationWarning={true} className={fonts}>
+    <html
+      lang="en"
+      suppressHydrationWarning={true}
+      className={cn(fonts, "scrollbar-none")}
+    >
       <body className="h-full min-h-screen w-full bg-stone-50 font-normal font-sans text-base text-stone-600 leading-normal antialiased">
         <ThemeProvider
           enableSystem

@@ -1,0 +1,67 @@
+"use client";
+
+import { Tabs } from "@base-ui/react/tabs";
+import {
+  Archive03Icon,
+  Folder02Icon,
+  Layers01Icon,
+} from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { useState } from "react";
+import Links from "./Links";
+import LinksArchives from "./LinksArchives";
+import LinksCollection from "./LinksCollection";
+
+const VIEWS = [
+  {
+    id: "all",
+    label: "All",
+    icon: Layers01Icon,
+    content: <Links />,
+    disabled: false,
+  },
+  {
+    id: "collections",
+    label: "Collections",
+    icon: Folder02Icon,
+    content: <LinksCollection />,
+    disabled: false,
+  },
+  {
+    id: "archived",
+    label: "Archived",
+    icon: Archive03Icon,
+    content: <LinksArchives />,
+    disabled: false,
+  },
+] as const;
+
+type View = (typeof VIEWS)[number]["id"];
+
+export default function LinksViews() {
+  const [view, setView] = useState<View>("all");
+
+  return (
+    <Tabs.Root value={view} onValueChange={setView}>
+      <Tabs.List className="mb-4 flex overflow-hidden rounded-xl bg-stone-200/40 p-1">
+        {VIEWS.map((view) => (
+          <Tabs.Tab
+            key={view.id}
+            value={view.id}
+            className="flex h-8 flex-1 cursor-pointer select-none items-center justify-center gap-1 whitespace-nowrap break-keep rounded-lg border-0 px-2 font-medium text-sm text-stone-800 outline-none before:inset-x-0 before:inset-y-1 before:rounded-sm before:outline-blue-800 hover:text-stone-900 focus-visible:relative focus-visible:before:absolute focus-visible:before:outline data-active:bg-white data-active:shadow-2xs [&_svg]:size-4"
+            disabled={view.disabled}
+          >
+            <HugeiconsIcon icon={view.icon} />
+            {view.label}
+          </Tabs.Tab>
+        ))}
+        <Tabs.Indicator />
+      </Tabs.List>
+      {VIEWS.map((view) => (
+        <Tabs.Panel key={view.id} value={view.id}>
+          {view.content}
+        </Tabs.Panel>
+      ))}
+    </Tabs.Root>
+  );
+}

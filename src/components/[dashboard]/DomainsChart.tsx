@@ -14,8 +14,8 @@ import { cn } from "tailwind-variants";
 
 const data = [
   { name: "UGC", value: 12, color: "#2563eb" }, // Blue
-  { name: "Editorial", value: 35, color: "#6366f1" }, // Indigo
-  { name: "Corporate", value: 20, color: "#9333ea" }, // Purple
+  { name: "Editorial", value: 35, color: "#6366f1" }, // violet
+  { name: "Corporate", value: 20, color: "#9333ea" }, // violet
   { name: "Competitor", value: 15, color: "#db2777" }, // Pink
   { name: "Others", value: 18, color: "#e5e7eb" }, // Gray
 ];

@@ -99,7 +99,7 @@ model Platform {
   id        String   @id @default(cuid())
   name      String   @unique
   baseUrl   String
-  icon      String?
+  icon      String
   archive   Boolean  @default(false)
   handles   Handle[]
   createdAt DateTime @default(now())

@@ -10,7 +10,7 @@ export default function Handles({ data }: { data: Public }) {
         <li key={handle.id} className="relative m-2 aspect-square size-14">
           <Link
             href="/"
-            className="outline- inline-flex size-full shrink items-center justify-center rounded-full bg-neutral-900/40 outline outline-neutral-800 outline-offset-4"
+            className="outline- inline-flex size-full shrink items-center justify-center rounded-full bg-stone-900/40 outline outline-stone-800 outline-offset-4"
           >
             <p>{handle.platform.name.charAt(0)}</p>
           </Link>

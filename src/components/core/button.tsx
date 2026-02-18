@@ -24,16 +24,21 @@ export default function Button({
 
 const buttonStyles = tv({
   base: [
-    "relative inline-flex w-full shrink-0 cursor-pointer items-center justify-center gap-1 whitespace-nowrap rounded-lg border border-transparent px-3 py-2 font-medium text-sm leading-none transition focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+    "relative inline-flex shrink cursor-pointer items-center justify-center gap-1 whitespace-nowrap rounded-lg border border-transparent leading-none transition focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:shrink-0",
   ],
   variants: {
     variant: {
-      primary: "bg-blue-500 text-white hover:bg-blue-400",
+      primary: "bg-violet-600 text-white hover:bg-violet-500",
+      secondary: "bg-transparent text-stone-600 hover:bg-stone-100",
+      destructive: "bg-red-600 text-white hover:bg-red-500",
     },
     size: {
-      sm: "[&_svg]:size-3.5",
-      md: "[&_svg]:size-3.5",
-      lg: "[&_svg]:size-3.5",
+      sm: "h-7 px-2 py-1 text-xs [&_svg]:size-3.5",
+      md: "h-8 px-3 py-2 text-sm [&_svg]:size-3.5",
+      lg: "h-9 px-3 py-2 text-base [&_svg]:size-3.5",
+      ism: "aspect-square size-7 text-xs [&_svg]:size-3.5",
+      imd: "aspect-square size-8 text-sm [&_svg]:size-3.5",
+      ilg: "aspect-square size-9 text-base [&_svg]:size-3.5",
     },
   },
   defaultVariants: {

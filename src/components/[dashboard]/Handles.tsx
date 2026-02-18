@@ -23,7 +23,7 @@ export default function Handles() {
     <SortableList
       items={handles}
       onDragEventEnd={handleReorder}
-      className="max-w-md space-y-2"
+      className="space-y-2"
       renderItem={(handle) => (
         <SortableItem uid={handle.id} key={handle.id}>
           <HandleControl handle={handle} />

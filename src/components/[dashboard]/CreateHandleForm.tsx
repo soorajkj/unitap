@@ -86,7 +86,7 @@ export default function CreateHandleForm() {
                       className="z-10 select-none outline-none"
                       sideOffset={8}
                     >
-                      <Select.Popup className="group min-w-(--anchor-width) origin-(--transform-origin) rounded-md bg-neutral-50 bg-clip-padding text-gray-900 shadow-gray-200 shadow-lg outline-1 outline-gray-200 transition data-[side=none]:data-starting-style:scale-100 data-[side=none]:data-starting-style:opacity-100 data-[side=none]:data-ending-style:transition-none data-[side=none]:data-starting-style:transition-none data-[side=none]:min-w-[calc(var(--anchor-width)+1rem)] data-ending-style:scale-90 data-starting-style:scale-90 data-ending-style:opacity-0 data-starting-style:opacity-0">
+                      <Select.Popup className="group min-w-(--anchor-width) origin-(--transform-origin) rounded-md bg-stone-50 bg-clip-padding text-gray-900 shadow-gray-200 shadow-lg outline-1 outline-gray-200 transition data-[side=none]:data-starting-style:scale-100 data-[side=none]:data-starting-style:opacity-100 data-[side=none]:data-ending-style:transition-none data-[side=none]:data-starting-style:transition-none data-[side=none]:min-w-[calc(var(--anchor-width)+1rem)] data-ending-style:scale-90 data-starting-style:scale-90 data-ending-style:opacity-0 data-starting-style:opacity-0">
                         <Select.ScrollUpArrow className="data-[side=none]:before:-top-full top-0 z-10 flex h-4 w-full cursor-default items-center justify-center rounded-md bg-[canvas] text-center text-xs before:absolute before:left-0 before:h-full before:w-full before:content-['']" />
                         <Select.List className="relative max-h-(--available-height) scroll-py-6 overflow-y-auto py-1">
                           {items.map(({ label, value }) => (
@@ -124,7 +124,7 @@ export default function CreateHandleForm() {
                   onBlur={field.handleBlur}
                   onChange={(e) => field.handleChange(e.target.value)}
                   autoComplete="off"
-                  className="h-10 rounded-md border border-neutral-900"
+                  className="h-10 rounded-md border border-stone-900"
                 />
               </Fragment>
             )}

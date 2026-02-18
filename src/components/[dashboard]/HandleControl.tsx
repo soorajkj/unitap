@@ -18,14 +18,10 @@ export default function HandleControl({ handle }: HandleControlProps) {
   return (
     <div ref={setActivatorNodeRef} className="relative">
       <div className="flex w-full items-center gap-px">
-        <Button
-          {...listeners}
-          {...attributes}
-          className="relative inline-flex size-8 shrink-0 cursor-pointer items-center justify-center gap-1 whitespace-nowrap rounded-lg border border-transparent font-medium text-sm leading-none transition focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0"
-        >
+        <Button {...listeners} {...attributes} variant="secondary" size="ism">
           <HugeiconsIcon icon={DragDropVerticalIcon} />
         </Button>
-        <div className="flex w-full gap-4 rounded-xl p-3 hover:bg-neutral-900">
+        <div className="flex w-full gap-4 rounded-xl p-3">
           <div className="flex flex-1 items-center gap-2">
             <div className="flex size-8 items-center justify-center">
               <div className="size-full rounded-md"></div>
@@ -35,7 +31,7 @@ export default function HandleControl({ handle }: HandleControlProps) {
             </div>
           </div>
           <div className="flex items-center gap-1">
-            <Button className="relative inline-flex size-8 shrink-0 cursor-pointer items-center justify-center gap-1 whitespace-nowrap rounded-lg border border-transparent font-medium text-sm leading-none transition focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0">
+            <Button variant="secondary" size="ism">
               <HugeiconsIcon icon={Pen01Icon} />
             </Button>
           </div>

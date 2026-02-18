@@ -67,7 +67,7 @@ export default function SigninForm() {
                   value={field.state.value}
                   onBlur={field.handleBlur}
                   onChange={(e) => field.handleChange(e.target.value)}
-                  className="h-10 rounded-md border border-neutral-900"
+                  className="h-10 rounded-md border border-stone-900"
                 />
                 <FieldInfo field={field} />
               </Fragment>
@@ -88,7 +88,7 @@ export default function SigninForm() {
                   value={field.state.value}
                   onBlur={field.handleBlur}
                   onChange={(e) => field.handleChange(e.target.value)}
-                  className="h-10 rounded-md border border-neutral-900"
+                  className="h-10 rounded-md border border-stone-900"
                 />
                 <FieldInfo field={field} />
               </Fragment>
@@ -103,7 +103,7 @@ export default function SigninForm() {
               <Button
                 type="submit"
                 disabled={!canSubmit}
-                className="relative inline-flex w-full shrink-0 cursor-pointer items-center justify-center gap-1 whitespace-nowrap rounded-lg border border-transparent px-3 py-2 font-medium text-sm leading-none transition focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:shrink-0"
+                className="relative inline-flex w-full shrink-0 cursor-pointer items-center justify-center gap-1 whitespace-nowrap rounded-lg border border-transparent px-3 py-2 font-medium text-sm leading-none transition focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:shrink-0"
               >
                 {isSubmitting ? "..." : "Submit"}
               </Button>
