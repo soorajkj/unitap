@@ -18,6 +18,7 @@ import {
   useDeleteLinkMutation,
 } from "@/hooks/useLinksMutations";
 import type { Link } from "@/types/response";
+import EditLinkDialog from "./EditLinkDialog";
 
 interface LinkControlProps {
   link: Link;
@@ -59,8 +60,10 @@ export default function LinkControl({ link }: LinkControlProps) {
               <div className="flex items-center justify-between gap-2">
                 <div className="flex flex-1 items-center gap-1">
                   <Tooltip.Provider>
+                    <EditLinkDialog link={link} />
                     <Tooltip.Root>
                       <Tooltip.Trigger
+                        delay={0}
                         render={
                           <Button variant="secondary" size="ism">
                             <HugeiconsIcon icon={StarIcon} />
@@ -78,6 +81,7 @@ export default function LinkControl({ link }: LinkControlProps) {
                     </Tooltip.Root>
                     <Tooltip.Root>
                       <Tooltip.Trigger
+                        delay={0}
                         render={
                           <Button
                             variant="secondary"
@@ -100,6 +104,7 @@ export default function LinkControl({ link }: LinkControlProps) {
                     </Tooltip.Root>
                     <Tooltip.Root>
                       <Tooltip.Trigger
+                        delay={0}
                         render={
                           <Button variant="secondary" size="sm">
                             <HugeiconsIcon icon={Analytics01Icon} />
@@ -121,6 +126,7 @@ export default function LinkControl({ link }: LinkControlProps) {
                 <Tooltip.Provider>
                   <Tooltip.Root>
                     <Tooltip.Trigger
+                      delay={0}
                       render={
                         <Button
                           variant="secondary"
@@ -171,6 +177,7 @@ export default function LinkControl({ link }: LinkControlProps) {
 
                   <Button
                     size="sm"
+                    variant="destructive"
                     disabled={deleteLinkMutation.isPending}
                     onClick={() => deleteLinkMutation.mutate(link.id)}
                   >

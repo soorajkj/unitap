@@ -6,8 +6,8 @@ export const createLinkSchema = z.object({
 });
 
 export const updateLinkSchema = z.object({
-  title: z.string().min(1, "Title is required").optional(),
-  url: z.url("Invalid URL").optional(),
+  title: z.string().min(1, "Title is required"),
+  url: z.url("Invalid URL"),
 });
 
 export const reorderLinksSchema = z.object({

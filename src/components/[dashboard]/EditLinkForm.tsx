@@ -4,21 +4,24 @@ import { Field } from "@base-ui/react";
 import { Input } from "@base-ui/react/input";
 import { useForm } from "@tanstack/react-form";
 import Button from "@/components/core/button";
-import { useLinksCreateMutation } from "@/hooks/useLinksMutations";
-import { createLinkSchema } from "@/utils/validators/links";
+import { useUpdateLinkMutation } from "@/hooks/useLinksMutations";
+import type { Link } from "@/types/response";
+import { updateLinkSchema } from "@/utils/validators/links";
 
-interface CreateLinkFormProps {
+interface EditLinkFormProps {
+  link: Link;
   handleClose: () => void;
 }
 
-export default function CreateLinkForm({ handleClose }: CreateLinkFormProps) {
-  const { mutate } = useLinksCreateMutation();
+export default function EditLinkForm({ link, handleClose }: EditLinkFormProps) {
+  const { mutate } = useUpdateLinkMutation();
 
   const form = useForm({
-    defaultValues: { title: "", url: "" },
-    validators: { onChange: createLinkSchema },
+    defaultValues: { title: link.title, url: link.url },
+    validators: { onChange: updateLinkSchema },
     onSubmit: async ({ value }) => {
-      mutate(value);
+      mutate({ id: link.id, data: value });
+
       form.reset();
       handleClose();
     },
@@ -26,7 +29,7 @@ export default function CreateLinkForm({ handleClose }: CreateLinkFormProps) {
 
   return (
     <form
-      id="create-link-form"
+      id="update-link-form"
       className="grid w-full grid-cols-1 gap-4"
       onSubmit={(e) => {
         e.preventDefault();
@@ -77,9 +80,19 @@ export default function CreateLinkForm({ handleClose }: CreateLinkFormProps) {
           )}
         </form.Field>
       </Field.Root>
-      <form.Subscribe selector={(state) => [state.canSubmit]}>
-        {([canSubmit]) => (
-          <Button type="submit" className="w-full" disabled={!canSubmit}>
+      <form.Subscribe
+        selector={(state) => [
+          state.canSubmit,
+          state.isDirty,
+          state.isDefaultValue,
+        ]}
+      >
+        {([canSubmit, isDirty, isDefaultValue]) => (
+          <Button
+            type="submit"
+            className="w-full"
+            disabled={!canSubmit || !isDirty || isDefaultValue}
+          >
             Submit
           </Button>
         )}
