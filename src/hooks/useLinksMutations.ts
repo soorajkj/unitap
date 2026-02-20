@@ -22,7 +22,33 @@ export const useLinksCreateMutation = () => {
 
   return useMutation({
     mutationFn: (data: z.infer<typeof createLinkSchema>) => createLink(data),
-    onSuccess: () => {
+    onMutate: async (data) => {
+      await queryClient.cancelQueries({ queryKey: ["LINKS"] });
+      const pre = queryClient.getQueryData<Link[]>(["LINKS"]);
+      queryClient.setQueryData<Link[]>(["LINKS"], (old) => {
+        const optimisticLink: Link = {
+          id: `optimistic-${Math.random().toString(36).substring(2, 9)}`,
+          title: data.title,
+          url: data.url,
+          order: pre?.length ? pre[0].order - 1 : 0,
+          archive: false,
+          userId: "optimistic-user",
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString(),
+        };
+
+        return old ? [optimisticLink, ...old] : [optimisticLink];
+      });
+
+      return { pre };
+    },
+    onError: (_err, _newLink, context) => {
+      if (context?.pre) {
+        queryClient.setQueryData(["LINKS"], context.pre);
+      }
+    },
+    onSuccess: () => toast.success("Link created successfully"),
+    onSettled: () => {
       queryClient.invalidateQueries({ queryKey: ["LINKS"] });
     },
   });

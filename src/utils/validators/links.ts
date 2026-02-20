@@ -3,7 +3,6 @@ import z from "zod";
 export const createLinkSchema = z.object({
   title: z.string().min(1, "Title is required"),
   url: z.url("Invalid URL"),
-  archive: z.boolean().default(false),
 });
 
 export const updateLinkSchema = z.object({

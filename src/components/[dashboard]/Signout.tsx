@@ -2,9 +2,16 @@
 
 import { Avatar } from "@base-ui/react/avatar";
 import { Button } from "@base-ui/react/button";
+import {
+  BadgeCheckIcon,
+  BellIcon,
+  CreditCardIcon,
+  LogOutIcon,
+} from "lucide-react";
 import { useRouter } from "next/navigation";
 import { authClient } from "@/lib/authClient";
 import { getQueryClient } from "@/lib/queryClient";
+import DropdownMenu from "../core/dropdown-menu";
 
 export default function Signout() {
   const router = useRouter();
@@ -20,17 +27,43 @@ export default function Signout() {
   if (isPending) return null;
 
   return (
-    <Avatar.Root
-      render={
-        <Button className="cursor-pointer">
-          <Avatar.Image src="" className="size-full" />
-          <Avatar.Fallback className="inline-flex size-full items-center justify-center rounded-full bg-violet-600 font-medium text-white text-xs">
-            {session?.user.email.slice(0, 2).toUpperCase()}
-          </Avatar.Fallback>
-        </Button>
-      }
-      className="flex aspect-square size-10"
-      onClick={handleSignout}
-    ></Avatar.Root>
+    <DropdownMenu.DropdownMenuRoot>
+      <DropdownMenu.DropdownMenuTrigger
+        render={
+          <Button className="rounded-full">
+            <Avatar.Root>
+              <Avatar.Image
+                src={session?.user.image ?? undefined}
+                alt={session?.user.name}
+              />
+              <Avatar.Fallback>
+                {session?.user.email.slice(0, 2).toUpperCase()}
+              </Avatar.Fallback>
+            </Avatar.Root>
+          </Button>
+        }
+      />
+      <DropdownMenu.DropdownMenuContent align="end">
+        <DropdownMenu.DropdownMenuGroup>
+          <DropdownMenu.DropdownMenuItem>
+            <BadgeCheckIcon />
+            Account
+          </DropdownMenu.DropdownMenuItem>
+          <DropdownMenu.DropdownMenuItem>
+            <CreditCardIcon />
+            Billing
+          </DropdownMenu.DropdownMenuItem>
+          <DropdownMenu.DropdownMenuItem>
+            <BellIcon />
+            Notifications
+          </DropdownMenu.DropdownMenuItem>
+        </DropdownMenu.DropdownMenuGroup>
+        <DropdownMenu.DropdownMenuSeparator />
+        <DropdownMenu.DropdownMenuItem onClick={handleSignout}>
+          <LogOutIcon />
+          Sign Out
+        </DropdownMenu.DropdownMenuItem>
+      </DropdownMenu.DropdownMenuContent>
+    </DropdownMenu.DropdownMenuRoot>
   );
 }
