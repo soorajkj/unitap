@@ -17,11 +17,11 @@ import {
 } from "@/hooks/useLinksMutations";
 import type { Link } from "@/types/response";
 
-interface ArchiveLinkItemProps {
+interface ArchiveLinkControlProps {
   link: Link;
 }
 
-export default function ArchiveLinkItem({ link }: ArchiveLinkItemProps) {
+export default function ArchiveLinkControl({ link }: ArchiveLinkControlProps) {
   const updateLinkMutation = useUpdateLinkMutation();
   const deleteLinkMutation = useDeleteLinkMutation();
   const [activeTab, setActiveTab] = useState<string | null>(null);

@@ -1,7 +1,7 @@
 "use client";
 
 import { useLinksQuery } from "@/hooks/useLinksQuery";
-import ArchiveLinkItem from "./ArchiveLinkItem";
+import ArchiveLinkControl from "./ArchiveLinkControl";
 
 export default function LinksArchives() {
   const { data } = useLinksQuery();
@@ -13,7 +13,7 @@ export default function LinksArchives() {
     <ul className="space-y-2">
       {archivedLinks.map((link) => (
         <li key={link.id} className="relative">
-          <ArchiveLinkItem link={link} />
+          <ArchiveLinkControl link={link} />
         </li>
       ))}
     </ul>
