@@ -13,7 +13,7 @@ import { useState } from "react";
 import Button from "@/components/core/button";
 import {
   useDeleteLinkMutation,
-  useUnarchiveLinkMutation,
+  useUpdateLinkMutation,
 } from "@/hooks/useLinksMutations";
 import type { Link } from "@/types/response";
 
@@ -22,7 +22,7 @@ interface ArchiveLinkItemProps {
 }
 
 export default function ArchiveLinkItem({ link }: ArchiveLinkItemProps) {
-  const unarchiveLinkMutation = useUnarchiveLinkMutation();
+  const updateLinkMutation = useUpdateLinkMutation();
   const deleteLinkMutation = useDeleteLinkMutation();
   const [activeTab, setActiveTab] = useState<string | null>(null);
 
@@ -99,8 +99,13 @@ export default function ArchiveLinkItem({ link }: ArchiveLinkItemProps) {
                     </Button>
                     <Button
                       size="sm"
-                      onClick={() => unarchiveLinkMutation.mutate(link.id)}
-                      disabled={unarchiveLinkMutation.isPending}
+                      onClick={() =>
+                        updateLinkMutation.mutate({
+                          id: link.id,
+                          data: { archive: false },
+                        })
+                      }
+                      disabled={updateLinkMutation.isPending}
                     >
                       Confirm
                     </Button>

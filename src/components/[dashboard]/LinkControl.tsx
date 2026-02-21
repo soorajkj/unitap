@@ -12,10 +12,11 @@ import {
 import { HugeiconsIcon } from "@hugeicons/react";
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
+import { cn } from "tailwind-variants";
 import Button from "@/components/core/button";
 import {
-  useArchiveLinkMutation,
   useDeleteLinkMutation,
+  useUpdateLinkMutation,
 } from "@/hooks/useLinksMutations";
 import type { Link } from "@/types/response";
 import EditLinkDialog from "./EditLinkDialog";
@@ -31,7 +32,7 @@ export default function LinkControl({ link }: LinkControlProps) {
 
   const [isDeleting, setIsDeleting] = useState(false);
   const deleteLinkMutation = useDeleteLinkMutation();
-  const archiveLinkMutation = useArchiveLinkMutation();
+  const updateLinkMutation = useUpdateLinkMutation();
 
   return (
     <div ref={setActivatorNodeRef} className="relative">
@@ -65,7 +66,20 @@ export default function LinkControl({ link }: LinkControlProps) {
                       <Tooltip.Trigger
                         delay={0}
                         render={
-                          <Button variant="secondary" size="ism">
+                          <Button
+                            variant="secondary"
+                            size="ism"
+                            onClick={() =>
+                              updateLinkMutation.mutate({
+                                id: link.id,
+                                data: { favorite: !link.favorite },
+                              })
+                            }
+                            className={cn(null, {
+                              "[&_svg]:fill-amber-400 [&_svg]:text-amber-400":
+                                link.favorite,
+                            })}
+                          >
                             <HugeiconsIcon icon={StarIcon} />
                           </Button>
                         }
@@ -86,8 +100,12 @@ export default function LinkControl({ link }: LinkControlProps) {
                           <Button
                             variant="secondary"
                             size="ism"
-                            onClick={() => archiveLinkMutation.mutate(link.id)}
-                            disabled={archiveLinkMutation.isPending}
+                            onClick={() =>
+                              updateLinkMutation.mutate({
+                                id: link.id,
+                                data: { archive: true },
+                              })
+                            }
                           >
                             <HugeiconsIcon icon={Archive03Icon} />
                           </Button>

@@ -4,7 +4,7 @@ import LinksViews from "@/components/[dashboard]/LinksViews";
 import ProfileEditor from "@/components/[dashboard]/ProfileEditor";
 import { getQueryClient } from "@/lib/queryClient";
 import { getHandles } from "@/utils/quries/handles";
-import { getLinks, getLinksAcrchives } from "@/utils/quries/links";
+import { getLinks } from "@/utils/quries/links";
 import { getPlatforms } from "@/utils/quries/platforms";
 
 export default async function Page() {
@@ -19,10 +19,6 @@ export default async function Page() {
     queryClient.prefetchQuery({
       queryKey: ["LINKS"],
       queryFn: getLinks,
-    }),
-    queryClient.prefetchQuery({
-      queryKey: ["LINKS_ARCHIVES"],
-      queryFn: getLinksAcrchives,
     }),
   ]);
 

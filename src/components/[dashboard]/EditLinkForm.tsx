@@ -6,7 +6,7 @@ import { useForm } from "@tanstack/react-form";
 import Button from "@/components/core/button";
 import { useUpdateLinkMutation } from "@/hooks/useLinksMutations";
 import type { Link } from "@/types/response";
-import { updateLinkSchema } from "@/utils/validators/links";
+import { createLinkSchema } from "@/utils/validators/links";
 
 interface EditLinkFormProps {
   link: Link;
@@ -18,7 +18,7 @@ export default function EditLinkForm({ link, handleClose }: EditLinkFormProps) {
 
   const form = useForm({
     defaultValues: { title: link.title, url: link.url },
-    validators: { onChange: updateLinkSchema },
+    validators: { onChange: createLinkSchema.pick({ title: true, url: true }) },
     onSubmit: async ({ value }) => {
       mutate({ id: link.id, data: value });
 
@@ -48,9 +48,9 @@ export default function EditLinkForm({ link, handleClose }: EditLinkFormProps) {
                 onBlur={field.handleBlur}
                 className="h-9 rounded border border-stone-200"
               />
-              {field.state.meta.isTouched && !field.state.meta.isValid ? (
+              {field.state.meta.errors.length > 0 ? (
                 <p className="text-red-500 text-sm leading-none">
-                  {field.state.meta.errors.map((e) => e?.message)}
+                  {field.state.meta.errors.map((e) => e?.message).join(", ")}
                 </p>
               ) : null}
               {field.state.meta.isValidating ? "Validating..." : null}
@@ -70,9 +70,9 @@ export default function EditLinkForm({ link, handleClose }: EditLinkFormProps) {
                 onBlur={field.handleBlur}
                 className="h-9 rounded border border-stone-200"
               />
-              {field.state.meta.isTouched && !field.state.meta.isValid ? (
+              {field.state.meta.errors.length > 0 ? (
                 <p className="text-red-500 text-sm leading-none">
-                  {field.state.meta.errors.map((e) => e?.message)}
+                  {field.state.meta.errors.map((e) => e?.message).join(", ")}
                 </p>
               ) : null}
               {field.state.meta.isValidating ? "Validating..." : null}

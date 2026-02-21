@@ -1,16 +1,17 @@
 "use client";
 
-import { useLinksArchivesQuery } from "@/hooks/useLinksQuery";
+import { useLinksQuery } from "@/hooks/useLinksQuery";
 import ArchiveLinkItem from "./ArchiveLinkItem";
 
 export default function LinksArchives() {
-  const { data: links } = useLinksArchivesQuery();
+  const { data } = useLinksQuery();
+  const archivedLinks = data?.filter((l) => l.archive) ?? [];
 
-  if (!links.length) return "No archives";
+  if (!archivedLinks.length) return "No archives";
 
   return (
     <ul className="space-y-2">
-      {links.map((link) => (
+      {archivedLinks.map((link) => (
         <li key={link.id} className="relative">
           <ArchiveLinkItem link={link} />
         </li>

@@ -12,12 +12,6 @@ export const getLinks = async () => {
   return await res.json();
 };
 
-export const getLinksAcrchives = async () => {
-  const res = await hrpc.api.links.archived.$get();
-  if (!res.ok) throw new Error("Failed to fetch archived links");
-  return await res.json();
-};
-
 export const createLink = async (data: z.infer<typeof createLinkSchema>) => {
   const res = await hrpc.api.links.$post({ json: data });
   if (!res.ok) throw new Error("Failed to create platforms");
@@ -33,18 +27,6 @@ export const reorderLinks = async (data: ReorderLinksSchema) => {
 };
 
 type UpdateLinksSchema = z.infer<typeof updateLinkSchema>;
-
-export const archiveLink = async (id: string) => {
-  const res = await hrpc.api.links[":id"].archive.$patch({ param: { id } });
-  if (!res.ok) throw new Error("Failed to archive link");
-  return await res.json();
-};
-
-export const unarchiveLink = async (id: string) => {
-  const res = await hrpc.api.links[":id"].unarchive.$patch({ param: { id } });
-  if (!res.ok) throw new Error("Failed to unarchive link");
-  return await res.json();
-};
 
 export const updateLink = async ({
   id,

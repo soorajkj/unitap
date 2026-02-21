@@ -4,11 +4,9 @@ import type z from "zod";
 import { getQueryClient } from "@/lib/queryClient";
 import type { Link } from "@/types/response";
 import {
-  archiveLink,
   createLink,
   deleteLink,
   reorderLinks,
-  unarchiveLink,
   updateLink,
 } from "@/utils/quries/links";
 import type {
@@ -32,6 +30,7 @@ export const useLinksCreateMutation = () => {
           url: data.url,
           order: pre?.length ? pre[0].order - 1 : 0,
           archive: false,
+          favorite: false,
           userId: "optimistic-user",
           createdAt: new Date().toISOString(),
           updatedAt: new Date().toISOString(),
@@ -87,83 +86,6 @@ export const useReorderLinksMutation = () => {
   });
 };
 
-export const useArchiveLinkMutation = () => {
-  const queryClient = getQueryClient();
-
-  return useMutation({
-    mutationFn: (id: string) => archiveLink(id),
-    onMutate: async (id: string) => {
-      await queryClient.cancelQueries({ queryKey: ["LINKS"] });
-      await queryClient.cancelQueries({ queryKey: ["LINKS_ARCHIVES"] });
-      const preActive = queryClient.getQueryData<Link[]>(["LINKS"]);
-      const preArchived = queryClient.getQueryData<Link[]>(["LINKS_ARCHIVES"]);
-      if (preActive) {
-        const item = preActive.find((l) => l.id === id);
-        queryClient.setQueryData(
-          ["LINKS"],
-          preActive.filter((l) => l.id !== id),
-        );
-        if (item && preArchived) {
-          queryClient.setQueryData(
-            ["LINKS_ARCHIVES"],
-            [...preArchived, { ...item, archive: true }],
-          );
-        }
-      }
-      return { preActive, preArchived };
-    },
-    onError: (_err, _id, context) => {
-      if (!context) return;
-      queryClient.setQueryData(["LINKS"], context.preActive);
-      queryClient.setQueryData(["LINKS_ARCHIVES"], context.preArchived);
-    },
-    onSuccess: () => toast("Link archived successfully."),
-    onSettled: () => {
-      queryClient.invalidateQueries({ queryKey: ["LINKS"] });
-      queryClient.invalidateQueries({ queryKey: ["LINKS_ARCHIVES"] });
-    },
-  });
-};
-
-export const useUnarchiveLinkMutation = () => {
-  const queryClient = getQueryClient();
-
-  return useMutation({
-    mutationFn: (id: string) => unarchiveLink(id),
-
-    onMutate: async (id: string) => {
-      await queryClient.cancelQueries({ queryKey: ["LINKS"] });
-      await queryClient.cancelQueries({ queryKey: ["LINKS_ARCHIVES"] });
-      const preActive = queryClient.getQueryData<Link[]>(["LINKS"]);
-      const preArchived = queryClient.getQueryData<Link[]>(["LINKS_ARCHIVES"]);
-      if (preArchived) {
-        const item = preArchived.find((l) => l.id === id);
-        queryClient.setQueryData(
-          ["LINKS_ARCHIVES"],
-          preArchived.filter((l) => l.id !== id),
-        );
-        if (item && preActive) {
-          queryClient.setQueryData(
-            ["LINKS"],
-            [...preActive, { ...item, archive: false }],
-          );
-        }
-      }
-      return { preActive, preArchived };
-    },
-    onError: (_err, _id, context) => {
-      if (!context) return;
-      queryClient.setQueryData(["LINKS"], context.preActive);
-      queryClient.setQueryData(["LINKS_ARCHIVES"], context.preArchived);
-    },
-    onSuccess: () => toast("Link unarchived successfully."),
-    onSettled: () => {
-      queryClient.invalidateQueries({ queryKey: ["LINKS"] });
-      queryClient.invalidateQueries({ queryKey: ["LINKS_ARCHIVES"] });
-    },
-  });
-};
-
 type UpdateLinkSchema = z.infer<typeof updateLinkSchema>;
 
 export const useUpdateLinkMutation = () => {
@@ -175,9 +97,11 @@ export const useUpdateLinkMutation = () => {
     onMutate: async ({ id, data }) => {
       await queryClient.cancelQueries({ queryKey: ["LINKS"] });
       const pre = queryClient.getQueryData<Link[]>(["LINKS"]);
-      const updateItem = (list?: Link[]) =>
-        list?.map((item) => (item.id === id ? { ...item, ...data } : item));
-      if (pre) queryClient.setQueryData(["LINKS"], updateItem(pre));
+      if (pre) {
+        queryClient.setQueryData<Link[]>(["LINKS"], (old) =>
+          old?.map((item) => (item.id === id ? { ...item, ...data } : item)),
+        );
+      }
       return { pre };
     },
     onError: (_err, _vars, context) => {
@@ -198,29 +122,20 @@ export const useDeleteLinkMutation = () => {
     mutationFn: (id: string) => deleteLink(id),
     onMutate: async (id: string) => {
       await queryClient.cancelQueries({ queryKey: ["LINKS"] });
-      await queryClient.cancelQueries({ queryKey: ["LINKS_ARCHIVES"] });
       const preLinks = queryClient.getQueryData<Link[]>(["LINKS"]);
-      const preArchives = queryClient.getQueryData<Link[]>(["LINKS_ARCHIVES"]);
       queryClient.setQueryData<Link[]>(["LINKS"], (old) =>
         old ? old.filter((link) => link.id !== id) : [],
       );
-      queryClient.setQueryData<Link[]>(["LINKS_ARCHIVES"], (old) =>
-        old ? old.filter((link) => link.id !== id) : [],
-      );
-      return { preLinks, preArchives };
+      return { preLinks };
     },
     onError: (_err, _id, context) => {
       if (context?.preLinks) {
         queryClient.setQueryData(["LINKS"], context.preLinks);
       }
-      if (context?.preArchives) {
-        queryClient.setQueryData(["LINKS_ARCHIVES"], context.preArchives);
-      }
     },
     onSuccess: () => toast.success("Link deletion success"),
     onSettled: () => {
       queryClient.invalidateQueries({ queryKey: ["LINKS"] });
-      queryClient.invalidateQueries({ queryKey: ["LINKS_ARCHIVES"] });
     },
   });
 };

@@ -8,7 +8,8 @@ import SortableItem from "./SortableItem";
 import SortableList from "./SortableList";
 
 export default function Links() {
-  const { data: links } = useLinksQuery();
+  const { data } = useLinksQuery();
+  const links = data?.filter((l) => !l.archive) ?? [];
 
   const { mutate } = useReorderLinksMutation();
 
