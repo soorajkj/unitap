@@ -77,9 +77,11 @@ export default function CreateLinkForm({ handleClose }: CreateLinkFormProps) {
           )}
         </form.Field>
       </Field.Root>
-      <form.Subscribe selector={(state) => [state.canSubmit]}>
-        {([canSubmit]) => (
-          <Button type="submit" className="w-full" disabled={!canSubmit}>
+      <form.Subscribe
+        selector={(state) => [state.canSubmit, state.isSubmitting]}
+      >
+        {([canSubmit, isSubmitting]) => (
+          <Button type="submit" disabled={!canSubmit || isSubmitting}>
             Submit
           </Button>
         )}

@@ -1,7 +1,7 @@
 import { Avatar } from "@base-ui/react/avatar";
 import { CheckmarkBadge02Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
-import HandlesDisplay from "./HandlesDisplay";
+import HandlesManager from "@/components/[dashboard]/HandlesManager";
 
 export default function ProfileEditor() {
   return (
@@ -20,7 +20,7 @@ export default function ProfileEditor() {
             Sarah Green <HugeiconsIcon icon={CheckmarkBadge02Icon} />
           </h3>
         </div>
-        <HandlesDisplay />
+        <HandlesManager />
       </div>
     </div>
   );

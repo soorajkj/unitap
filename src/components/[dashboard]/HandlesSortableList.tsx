@@ -1,13 +1,13 @@
 "use client";
 
+import HandleControl from "@/components/[dashboard]/HandleControl";
+import SortableItem from "@/components/[dashboard]/SortableItem";
+import SortableList from "@/components/[dashboard]/SortableList";
 import { useReorderHandleMutation } from "@/hooks/useHandlesMutation";
 import { useHandlesQuery } from "@/hooks/useHandlesQuery";
 import type { Handle } from "@/types/response";
-import HandleControl from "./HandleControl";
-import SortableItem from "./SortableItem";
-import SortableList from "./SortableList";
 
-export default function Handles() {
+export default function HandlesSortableList() {
   const { data: handles } = useHandlesQuery();
   const { mutate } = useReorderHandleMutation();
 
@@ -23,7 +23,6 @@ export default function Handles() {
     <SortableList
       items={handles}
       onDragEventEnd={handleReorder}
-      className="space-y-2"
       renderItem={(handle) => (
         <SortableItem uid={handle.id} key={handle.id}>
           <HandleControl handle={handle} />

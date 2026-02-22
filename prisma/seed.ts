@@ -51,7 +51,7 @@ const platforms: Platform[] = [
   {
     name: "Twitch",
     baseUrl: "https://twitch.tv/",
-    icon: "twitter",
+    icon: "twitch",
   },
 ];
 

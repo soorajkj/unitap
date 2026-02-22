@@ -27,11 +27,19 @@ export const handlesRoute = hono
     const user = c.get("user");
     const json = c.req.valid("json");
 
+    const firstLink = await db.handle.findFirst({
+      where: { userId: user.id },
+      orderBy: [{ order: "asc" }, { id: "asc" }],
+      select: { order: true },
+    });
+
+    const newOrder = firstLink ? firstLink.order - 1 : 0;
+
     const handle = await db.handle.create({
       data: {
         userId: user.id,
-        platformId: json.platformId,
-        url: json.url,
+        order: newOrder,
+        ...json,
       },
     });
 
@@ -58,19 +66,33 @@ export const handlesRoute = hono
 
     return c.json("success");
   })
+  .get("/:id", async (c) => {
+    const db = c.get("prisma");
+    const user = c.get("user");
+    const { id } = c.req.param();
+
+    const handle = await db.handle.findUnique({
+      where: {
+        userId: user.id,
+        id,
+      },
+      include: { platform: true },
+    });
+
+    return c.json(handle);
+  })
   .patch("/:id", zValidator("json", updateHandleSchema), async (c) => {
     const db = c.get("prisma");
     const user = c.get("user");
     const { id } = c.req.param();
+    const data = c.req.valid("json");
 
     const result = await db.handle.updateMany({
       where: {
         userId: user.id,
         id,
       },
-      data: {
-        archive: true,
-      },
+      data,
     });
 
     return c.json(result);
@@ -80,13 +102,10 @@ export const handlesRoute = hono
     const user = c.get("user");
     const { id } = c.req.param();
 
-    const result = await db.handle.updateMany({
+    const result = await db.handle.delete({
       where: {
         userId: user.id,
         id,
-      },
-      data: {
-        archive: true,
       },
     });
 

@@ -3,10 +3,16 @@ import { toast } from "sonner";
 import type z from "zod";
 import { getQueryClient } from "@/lib/queryClient";
 import type { Handle } from "@/types/response";
-import { createHandle, reorderHandles } from "@/utils/quries/handles";
+import {
+  createHandle,
+  deleteHandle,
+  reorderHandles,
+  updateHandle,
+} from "@/utils/quries/handles";
 import type {
   createHandleSchema,
   reorderHandlesSchema,
+  UpdateHandleSchema,
 } from "@/utils/validators/handles";
 
 export const useHandlesCreateMutation = () => {
@@ -59,5 +65,63 @@ export const useReorderHandleMutation = () => {
     },
     onSuccess: () => toast("Handles reordered successfully."),
     onSettled: () => queryClient.invalidateQueries({ queryKey: ["HANDLES"] }),
+  });
+};
+
+export const useHandleUpdateMutation = () => {
+  const queryClient = getQueryClient();
+
+  return useMutation({
+    mutationFn: async ({
+      id,
+      data,
+    }: {
+      id: string;
+      data: UpdateHandleSchema;
+    }) => updateHandle({ id, data }),
+    onMutate: async ({ id, data }) => {
+      await queryClient.cancelQueries({ queryKey: ["HANDLES"] });
+      const pre = queryClient.getQueryData<Handle[]>(["HANDLES"]);
+      if (pre) {
+        queryClient.setQueryData<Handle[]>(["HANDLES"], (old) =>
+          old?.map((item) => (item.id === id ? { ...item, ...data } : item)),
+        );
+      }
+      return { pre };
+    },
+    onError: (_err, _vars, context) => {
+      if (!context) return;
+      queryClient.setQueryData(["HANDLES"], context.pre);
+    },
+    onSuccess: () => toast("Handle updated successfully."),
+    onSettled: () => {
+      queryClient.invalidateQueries({ queryKey: ["HANDLES"] });
+    },
+  });
+};
+
+export const useHandleDeleteMutation = () => {
+  const queryClient = getQueryClient();
+
+  return useMutation({
+    mutationFn: async (id: string) => deleteHandle(id),
+    onMutate: async (id) => {
+      await queryClient.cancelQueries({ queryKey: ["HANDLES"] });
+      const pre = queryClient.getQueryData<Handle[]>(["HANDLES"]);
+      if (pre) {
+        queryClient.setQueryData<Handle[]>(["HANDLES"], (old) =>
+          old?.filter((item) => item.id !== id),
+        );
+      }
+      return { pre };
+    },
+    onError: (_err, _vars, context) => {
+      if (!context) return;
+      queryClient.setQueryData(["HANDLES"], context.pre);
+    },
+    onSuccess: () => toast("Handle deleted successfully."),
+    onSettled: () => {
+      queryClient.invalidateQueries({ queryKey: ["HANDLES"] });
+    },
   });
 };
