@@ -9,22 +9,20 @@ import {
   LogOutIcon,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
+import DropdownMenu from "@/components/core/dropdown-menu";
 import { authClient } from "@/lib/authClient";
 import { getQueryClient } from "@/lib/queryClient";
-import DropdownMenu from "../core/dropdown-menu";
 
 export default function Signout() {
   const router = useRouter();
   const queryClient = getQueryClient();
-  const { data: session, isPending } = authClient.useSession();
+  const { data: session } = authClient.useSession();
 
   const handleSignout = async () => {
     await authClient.signOut();
     queryClient.clear();
     router.push("/auth/signin");
   };
-
-  if (isPending) return null;
 
   return (
     <DropdownMenu.DropdownMenuRoot>
