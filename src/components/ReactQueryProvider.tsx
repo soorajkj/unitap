@@ -6,9 +6,7 @@ import {
   type QueryClientProviderProps,
   QueryErrorResetBoundary,
 } from "@tanstack/react-query";
-import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
-import Loader from "@/components/Loader";
 import { getQueryClient } from "@/lib/queryClient";
 
 export default function ReactQueryProvider({
@@ -34,7 +32,7 @@ export default function ReactQueryProvider({
             )}
             onReset={reset}
           >
-            <Suspense fallback={<Loader />}>{children}</Suspense>
+            {children}
           </ErrorBoundary>
         )}
       </QueryErrorResetBoundary>

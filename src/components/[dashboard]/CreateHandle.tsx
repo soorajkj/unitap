@@ -46,8 +46,8 @@ export default function CreateHandle() {
 
       <Dialog.Root handle={dialog} open={open} onOpenChange={setOpen}>
         <Dialog.Portal>
-          <Dialog.Backdrop className="fixed inset-0 z-30 min-h-dvh bg-black opacity-20 transition-all duration-150 data-ending-style:opacity-0 data-starting-style:opacity-0 supports-[-webkit-touch-callout:none]:absolute dark:opacity-70" />
-          <Dialog.Popup className="-mt-8 -translate-x-1/2 -translate-y-1/2 fixed top-1/2 left-1/2 z-40 w-full max-w-sm rounded-2xl bg-gray-50 p-6 text-gray-900 outline-1 outline-gray-200 transition-all duration-150 data-ending-style:scale-90 data-starting-style:scale-90 data-ending-style:opacity-0 data-starting-style:opacity-0 dark:outline-gray-300">
+          <Dialog.Backdrop className="fixed inset-0 z-30 min-h-dvh bg-stone-950/40 transition-all duration-150 data-ending-style:opacity-0 data-starting-style:opacity-0 supports-[-webkit-touch-callout:none]:absolute" />
+          <Dialog.Popup className="-mt-8 -translate-x-1/2 -translate-y-1/2 fixed top-1/2 left-1/2 z-40 w-full max-w-md rounded-2xl bg-gray-50 p-6 text-gray-900 outline-1 outline-gray-200 transition-all duration-150 data-ending-style:scale-90 data-starting-style:scale-90 data-ending-style:opacity-0 data-starting-style:opacity-0 dark:outline-gray-300">
             {renderStage()}
           </Dialog.Popup>
         </Dialog.Portal>

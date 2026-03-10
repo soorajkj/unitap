@@ -7,6 +7,9 @@ const nextConfig: NextConfig = {
       {
         hostname: "www.google.com",
       },
+      {
+        hostname: "framerusercontent.com",
+      },
     ],
   },
 };

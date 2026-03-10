@@ -29,18 +29,16 @@ export default function HandleControl({ handle }: HandleControlProps) {
         <Button {...listeners} {...attributes} variant="secondary" size="ism">
           <HugeiconsIcon icon={DragDropVerticalIcon} />
         </Button>
-        <div className="flex w-full gap-4 rounded-xl p-2">
-          <div className="flex flex-1 items-center gap-2">
+        <div className="flex w-full gap-2">
+          <div className="flex flex-1 items-center gap-2 overflow-hidden rounded-xl p-2.5 hover:bg-stone-200/50">
             <div className="flex size-6 items-center justify-center">
               <div className="rounded-md [&_svg]:size-5">
                 <HugeiconsIcon icon={PLATFORM_ICONS[icon]} strokeWidth={2} />
               </div>
             </div>
             <div className="flex flex-1 flex-col gap-1">
-              <p className="font-medium text-sm">{handle.platform.name}</p>
+              <p className="font-semibold text-base">{handle.platform.name}</p>
             </div>
-          </div>
-          <div className="flex items-center gap-1">
             <Button
               variant="secondary"
               size="ism"
@@ -48,6 +46,8 @@ export default function HandleControl({ handle }: HandleControlProps) {
             >
               <HugeiconsIcon icon={Pen01Icon} />
             </Button>
+          </div>
+          <div className="flex items-center gap-1">
             <Switch
               checked={!handle.archive}
               disabled={updateHandleMutation.isPending}

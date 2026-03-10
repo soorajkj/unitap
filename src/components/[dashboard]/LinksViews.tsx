@@ -1,16 +1,11 @@
 "use client";
 
 import { Tabs } from "@base-ui/react/tabs";
-import {
-  Archive03Icon,
-  Folder02Icon,
-  Layers01Icon,
-} from "@hugeicons/core-free-icons";
+import { Archive03Icon, Layers01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { useState } from "react";
 import Links from "./Links";
 import LinksArchives from "./LinksArchives";
-import LinksCollection from "./LinksCollection";
 
 const VIEWS = [
   {
@@ -18,13 +13,6 @@ const VIEWS = [
     label: "All",
     icon: Layers01Icon,
     content: <Links />,
-    disabled: false,
-  },
-  {
-    id: "collections",
-    label: "Collections",
-    icon: Folder02Icon,
-    content: <LinksCollection />,
     disabled: false,
   },
   {

@@ -1,10 +1,10 @@
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-stone-900">
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <footer className="relative overflow-hidden">
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-10 py-12 lg:flex-row lg:items-start lg:justify-between">
           <div className="lg:max-w-sm">
-            <div className="mb-5 space-y-1 text-sm text-stone-500">
+            <div className="mb-5 space-y-1 text-sm text-white">
               <p>Searchable Limited</p>
               <p>B1, 9 Tanner St</p>
               <p>London, SE1 3LE</p>
@@ -16,7 +16,7 @@ export default function Footer() {
               <ul className="space-y-3">
                 <li>
                   <a
-                    className="text-sm text-stone-400 transition-colors hover:text-white"
+                    className="text-neutral-400 text-sm transition hover:underline"
                     href="https://docs.searchable.com"
                   >
                     Documentation
@@ -24,7 +24,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    className="text-sm text-stone-400 transition-colors hover:text-white"
+                    className="text-neutral-400 text-sm transition hover:underline"
                     href="/resources"
                   >
                     Resources
@@ -32,7 +32,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    className="text-sm text-stone-400 transition-colors hover:text-white"
+                    className="text-neutral-400 text-sm transition hover:underline"
                     href="/blog"
                   >
                     Blog
@@ -40,7 +40,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    className="text-sm text-stone-400 transition-colors hover:text-white"
+                    className="text-neutral-400 text-sm transition hover:underline"
                     href="/guide"
                   >
                     Guides
@@ -48,7 +48,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    className="text-sm text-stone-400 transition-colors hover:text-white"
+                    className="text-neutral-400 text-sm transition hover:underline"
                     href="/data"
                   >
                     AI Search Data
@@ -63,7 +63,7 @@ export default function Footer() {
               <ul className="space-y-3">
                 <li>
                   <a
-                    className="text-sm text-stone-400 transition-colors hover:text-white"
+                    className="text-neutral-400 text-sm transition hover:underline"
                     href="/chatgpt-product-visibility-report"
                   >
                     ChatGPT Shopping Checker
@@ -71,7 +71,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    className="text-sm text-stone-400 transition-colors hover:text-white"
+                    className="text-neutral-400 text-sm transition hover:underline"
                     href="/try-agent"
                   >
                     Free AI SEO Agent
@@ -79,7 +79,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    className="text-sm text-stone-400 transition-colors hover:text-white"
+                    className="text-neutral-400 text-sm transition hover:underline"
                     href="/free-visibility-report"
                   >
                     Free AI Visibility Score
@@ -87,7 +87,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    className="text-sm text-stone-400 transition-colors hover:text-white"
+                    className="text-neutral-400 text-sm transition hover:underline"
                     href="/ucp-readiness"
                   >
                     AI Shopping Agent Checker
@@ -100,7 +100,7 @@ export default function Footer() {
               <ul className="space-y-3">
                 <li>
                   <a
-                    className="text-sm text-stone-400 transition-colors hover:text-white"
+                    className="text-neutral-400 text-sm transition hover:underline"
                     href="/about"
                   >
                     About
@@ -108,7 +108,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    className="text-sm text-stone-400 transition-colors hover:text-white"
+                    className="text-neutral-400 text-sm transition hover:underline"
                     href="/customers"
                   >
                     Customers
@@ -116,7 +116,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    className="text-sm text-stone-400 transition-colors hover:text-white"
+                    className="text-neutral-400 text-sm transition hover:underline"
                     href="/authors"
                   >
                     Authors
@@ -124,7 +124,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    className="text-sm text-stone-400 transition-colors hover:text-white"
+                    className="text-neutral-400 text-sm transition hover:underline"
                     href="/contact"
                   >
                     Contact
@@ -132,7 +132,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    className="text-sm text-stone-400 transition-colors hover:text-white"
+                    className="text-neutral-400 text-sm transition hover:underline"
                     href="/careers"
                   >
                     Careers
@@ -140,7 +140,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    className="text-sm text-stone-400 transition-colors hover:text-white"
+                    className="text-neutral-400 text-sm transition hover:underline"
                     href="https://join.slack.com/t/searchablecommunity/shared_invite/zt-3jynfw88g-P5LjrLsPRpRBjHZiMUDBpA"
                   >
                     Community
@@ -153,7 +153,7 @@ export default function Footer() {
               <ul className="space-y-3">
                 <li>
                   <a
-                    className="text-sm text-stone-400 transition-colors hover:text-white"
+                    className="text-neutral-400 text-sm transition hover:underline"
                     href="/compare"
                   >
                     All Comparisons
@@ -161,7 +161,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    className="text-sm text-stone-400 transition-colors hover:text-white"
+                    className="text-neutral-400 text-sm transition hover:underline"
                     href="/compare/searchable-vs-semrush"
                   >
                     vs Semrush
@@ -169,7 +169,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    className="text-sm text-stone-400 transition-colors hover:text-white"
+                    className="text-neutral-400 text-sm transition hover:underline"
                     href="/compare/searchable-vs-ahrefs"
                   >
                     vs Ahrefs
@@ -177,7 +177,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    className="text-sm text-stone-400 transition-colors hover:text-white"
+                    className="text-neutral-400 text-sm transition hover:underline"
                     href="/compare/searchable-vs-profound"
                   >
                     vs Profound
@@ -188,19 +188,19 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-6 py-6 lg:flex-row lg:items-start lg:justify-between">
           <div className="w-full max-w-3xl space-y-2">
-            <p className="text-stone-500 text-xs">
+            <p className="text-neutral-400 text-xs">
               © {/* */}
               {new Date().getFullYear()}
-              {/* */} Taptree.ai | "Taptree" and the Taptree logo are trademarks
-              of the company
+              {/* */} Unitap.ai | "Unitap" and the Unitap logo are trademarks of
+              the company
             </p>
-            <p className="text-stone-500 text-xs">
+            <p className="text-neutral-400 text-xs">
               Registered in India. All rights reserved.
             </p>
-            <p className="text-stone-600 text-xs leading-relaxed">
+            <p className="text-neutral-400 text-xs leading-relaxed">
               DISCLAIMER: The content on this website is provided for general
               informational purposes only and does not constitute professional
               advice. We make no representations or warranties regarding the

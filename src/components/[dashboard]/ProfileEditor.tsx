@@ -16,7 +16,7 @@ export default function ProfileEditor() {
       </div>
       <div className="flex w-full flex-col gap-2">
         <div className="flex w-full flex-col space-y-1">
-          <h3 className="flex items-center gap-1 font-medium text-lg text-neutral-950 leading-none [&_svg]:size-5 [&_svg]:fill-blue-500 [&_svg]:text-white">
+          <h3 className="flex items-center gap-1 font-medium text-lg text-stone-950 leading-none [&_svg]:size-5 [&_svg]:fill-blue-500 [&_svg]:text-white">
             Sarah Green <HugeiconsIcon icon={CheckmarkBadge02Icon} />
           </h3>
         </div>

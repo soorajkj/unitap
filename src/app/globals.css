@@ -1,2 +1,6 @@
 @import "tailwindcss";
 @plugin "tailwind-scrollbar";
+
+@theme {
+  --font-display: var(--font-display);
+}

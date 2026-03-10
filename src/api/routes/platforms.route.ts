@@ -6,6 +6,8 @@ export const platformsRoute = hono
   .use(authMiddleware)
   .get("/", async (c) => {
     const db = c.get("prisma");
-    const platforms = await db.platform.findMany();
+    const platforms = await db.platform.findMany({
+      where: { archive: false },
+    });
     return c.json(platforms);
   });

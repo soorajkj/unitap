@@ -21,6 +21,16 @@ export default function HandlesListView() {
           <HugeiconsIcon icon={Cancel01Icon} />
         </Dialog.Close>
       </div>
+      <div className="flex flex-col space-y-1">
+        <h2 className="font-semibold text-base text-black">
+          Show visitors where to find you
+        </h2>
+        <p className="text-base">
+          Add your social media profiles and more as linked icons on your
+          Unitap.
+        </p>
+      </div>
+
       <HandlesSortableList />
       <Button onClick={openCreate} size="sm">
         <HugeiconsIcon icon={Add01Icon} />
