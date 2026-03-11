@@ -1,6 +1,6 @@
 "use client";
 
-import { Field } from "@base-ui/react";
+import { Field } from "@base-ui/react/field";
 import { Input } from "@base-ui/react/input";
 import { Delete01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
@@ -48,7 +48,7 @@ export default function HandleEditForm({
           form.handleSubmit();
         }}
       >
-        <Field.Root className="flex w-full flex-col gap-1">
+        <Field.Root className="grid gap-1">
           <form.Field name="url">
             {(field) => (
               <>

@@ -33,7 +33,7 @@ export default function CreateLinkForm({ handleClose }: CreateLinkFormProps) {
         form.handleSubmit();
       }}
     >
-      <Field.Root className="flex w-full flex-col gap-1">
+      <Field.Root className="grid gap-1">
         <form.Field name="title">
           {(field) => (
             <>
@@ -55,7 +55,7 @@ export default function CreateLinkForm({ handleClose }: CreateLinkFormProps) {
           )}
         </form.Field>
       </Field.Root>
-      <Field.Root className="flex w-full flex-col gap-1">
+      <Field.Root className="grid gap-1">
         <form.Field name="url">
           {(field) => (
             <>

@@ -6,6 +6,7 @@ import { getQueryClient } from "@/lib/queryClient";
 import { getHandles } from "@/utils/quries/handles";
 import { getLinks } from "@/utils/quries/links";
 import { getPlatforms } from "@/utils/quries/platforms";
+import { getProfile } from "@/utils/quries/profile";
 
 export default async function Page() {
   const queryClient = getQueryClient();
@@ -16,6 +17,7 @@ export default async function Page() {
       queryFn: getPlatforms,
     }),
     queryClient.prefetchQuery({ queryKey: ["HANDLES"], queryFn: getHandles }),
+    queryClient.prefetchQuery({ queryKey: ["PROFILE"], queryFn: getProfile }),
     queryClient.prefetchQuery({
       queryKey: ["LINKS"],
       queryFn: getLinks,

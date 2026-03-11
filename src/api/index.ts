@@ -1,10 +1,11 @@
 import { HTTPException } from "hono/http-exception";
 import { authRoute } from "@/api/routes/auth.route";
+import { handlesRoute } from "@/api/routes/handles.route";
+import { linksRoute } from "@/api/routes/links.route";
+import { platformsRoute } from "@/api/routes/platforms.route";
+import { profileRoute } from "@/api/routes/profile.route";
 import { publicRoute } from "@/api/routes/public.route";
 import { hono } from "@/lib/hono";
-import { handlesRoute } from "./routes/handles.route";
-import { linksRoute } from "./routes/links.route";
-import { platformsRoute } from "./routes/platforms.route";
 
 const api = hono
   .createApp()
@@ -19,6 +20,7 @@ const api = hono
   })
   .route("/auth", authRoute)
   .route("/platforms", platformsRoute)
+  .route("/profile", profileRoute)
   .route("/handles", handlesRoute)
   .route("/links", linksRoute)
   .route("/public", publicRoute);

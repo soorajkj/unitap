@@ -10,6 +10,7 @@
     "format": "biome format --write",
     "check-types": "tsc --noEmit",
     "postinstall": "prisma generate",
+    "db:generate": "prisma generate",
     "db:seed": "prisma db seed",
     "db:studio": "prisma studio",
     "db:migrate": "prisma migrate dev",
