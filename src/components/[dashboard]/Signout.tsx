@@ -9,14 +9,18 @@ import {
   LogOutIcon,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { useIsClient } from "usehooks-ts";
 import DropdownMenu from "@/components/core/dropdown-menu";
 import { authClient } from "@/lib/authClient";
 import { getQueryClient } from "@/lib/queryClient";
 
 export default function Signout() {
   const router = useRouter();
+  const isMounted = useIsClient();
   const queryClient = getQueryClient();
   const { data: session } = authClient.useSession();
+
+  if (!isMounted) return null;
 
   const handleSignout = async () => {
     await authClient.signOut();

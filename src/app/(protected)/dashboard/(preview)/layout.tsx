@@ -8,7 +8,7 @@ export default function Layout({ children }: LayoutProps<"/dashboard">) {
         <Header />
         <main className="flex-1">{children}</main>
       </div>
-      <div className="scrollbar-none hidden w-full max-w-md overflow-y-auto xl:block">
+      <div className="scrollbar-none hidden w-full max-w-xl overflow-y-auto xl:block">
         <Previewer />
       </div>
     </div>
