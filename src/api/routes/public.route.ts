@@ -4,12 +4,12 @@ export const publicRoute = hono.createApp().get("/:username", async (c) => {
   const db = c.get("prisma");
   const { username } = c.req.param();
 
-  const profile = await db.user.findFirst({
+  const profile = await db.profile.findFirst({
     where: {
       username,
     },
     include: {
-      profile: true,
+      user: true,
       links: {
         where: {
           archive: false,
