@@ -13,6 +13,33 @@ export const auth = betterAuth({
     autoSignIn: false,
   },
 
+  databaseHooks: {
+    user: {
+      create: {
+        after: async (user) => {
+          const baseUsername = user.email
+            .split("@")[0]
+            .toLowerCase()
+            .replace(/[^a-z0-9]/g, "");
+          let username = baseUsername;
+          let counter = 1;
+
+          while (await prisma.profile.findUnique({ where: { username } })) {
+            username = `${baseUsername}${counter}`;
+            counter++;
+          }
+
+          await prisma.profile.create({
+            data: {
+              userId: user.id,
+              username,
+              title: user.name,
+            },
+          });
+        },
+      },
+    },
+  },
   session: {
     cookieCache: {
       enabled: true,
