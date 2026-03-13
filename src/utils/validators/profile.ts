@@ -1,6 +1,22 @@
 import z from "zod";
 
 export const profileCreateSchema = z.object({
+  username: z
+    .string()
+    .min(3)
+    .max(30)
+    .regex(/^[a-z0-9]+(?:[._-][a-z0-9]+)*$/)
+    .trim(),
+  title: z.string().min(1).max(100).trim(),
+});
+
+export const profileUpdateSchema = z.object({
+  username: z
+    .string()
+    .min(3)
+    .max(30)
+    .regex(/^[a-z0-9]+(?:[._-][a-z0-9]+)*$/)
+    .trim(),
   title: z.string().min(1).max(100).trim(),
   bio: z.string().max(500).trim(),
   email: z.email().or(z.literal("")),
@@ -11,7 +27,6 @@ export const profileCreateSchema = z.object({
   address: z.string().max(200).trim(),
 });
 
-export const profileUpdateSchema = profileCreateSchema;
+export type ProfileCreateSchema = z.infer<typeof profileCreateSchema>;
 
-export type ProfileCreateInput = z.infer<typeof profileCreateSchema>;
-export type ProfileUpdateInput = z.infer<typeof profileUpdateSchema>;
+export type ProfileUpdateSchema = z.infer<typeof profileUpdateSchema>;

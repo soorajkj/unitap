@@ -3,7 +3,7 @@ import { getPublicProfile } from "@/utils/quries/publicProfile";
 
 export const usePublicProfileQuery = (username: string) => {
   return useSuspenseQuery({
-    queryKey: ["PROFILE", username],
+    queryKey: ["PROFILES", username],
     queryFn: () => getPublicProfile(username),
   });
 };

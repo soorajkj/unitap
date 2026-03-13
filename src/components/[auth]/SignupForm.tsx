@@ -21,7 +21,6 @@ export default function SignupForm() {
     defaultValues: {
       name: "",
       email: "",
-      username: "",
       password: "",
     },
     onSubmit: async ({ value }) => {
@@ -86,27 +85,6 @@ export default function SignupForm() {
                 <Input
                   id={field.name}
                   type="email"
-                  name={field.name}
-                  value={field.state.value}
-                  onBlur={field.handleBlur}
-                  onChange={(e) => field.handleChange(e.target.value)}
-                  className="h-10 rounded-md border border-stone-900"
-                />
-                <FieldInfo field={field} />
-              </Fragment>
-            )}
-          </form.Field>
-        </Field.Item>
-        <Field.Item className="grid gap-1">
-          <form.Field name="username">
-            {(field) => (
-              <Fragment>
-                <Field.Label htmlFor={field.name} className="text-sm">
-                  Username
-                </Field.Label>
-                <Input
-                  id={field.name}
-                  type="text"
                   name={field.name}
                   value={field.state.value}
                   onBlur={field.handleBlur}

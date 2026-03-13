@@ -1,7 +1,7 @@
 import { betterAuth } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";
 import { nextCookies } from "better-auth/next-js";
-import { openAPI, username } from "better-auth/plugins";
+import { openAPI } from "better-auth/plugins";
 import { prisma } from "@/lib/prisma";
 
 export const auth = betterAuth({
@@ -12,11 +12,12 @@ export const auth = betterAuth({
     enabled: true,
     autoSignIn: false,
   },
+
   session: {
     cookieCache: {
       enabled: true,
       maxAge: 5 * 60, // Cache duration in seconds
     },
   },
-  plugins: [username(), openAPI(), nextCookies()],
+  plugins: [openAPI(), nextCookies()],
 });

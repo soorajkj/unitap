@@ -4,7 +4,7 @@ import { Field } from "@base-ui/react/field";
 import { Input } from "@base-ui/react/input";
 import { useForm } from "@tanstack/react-form";
 import Button from "@/components/core/button";
-import { useProfileUpdateMutation } from "@/hooks/useProfileMutation";
+import { useProfileUpdateMutation } from "@/hooks/useProfilesMutation";
 import type { Profile } from "@/types/response";
 import { profileUpdateSchema } from "@/utils/validators/profile";
 
@@ -22,6 +22,7 @@ export default function ProfileEditForm({
   const form = useForm({
     defaultValues: {
       title: profile?.title || "",
+      username: profile?.username || "",
       bio: profile?.bio || "",
       email: profile?.email || "",
       phone: profile?.phone || "",
@@ -48,6 +49,29 @@ export default function ProfileEditForm({
       }}
     >
       <Field.Root className="grid gap-1">
+        <form.Field name="username">
+          {(field) => (
+            <>
+              <Field.Label>Username</Field.Label>
+              <Input
+                id={field.name}
+                value={field.state.value}
+                onChange={(e) => field.handleChange(e.target.value)}
+                onBlur={field.handleBlur}
+                className="h-9 rounded border border-stone-200"
+              />
+              {(field.state.meta.isTouched || field.state.meta.isDirty) &&
+              field.state.meta.errors.length ? (
+                <p className="text-red-500 text-sm leading-none">
+                  {field.state.meta.errors.map((e) => e?.message).join(", ")}
+                </p>
+              ) : null}
+              {field.state.meta.isValidating ? "Validating..." : null}
+            </>
+          )}
+        </form.Field>
+      </Field.Root>
+      <Field.Root className="grid gap-1">
         <form.Field name="title">
           {(field) => (
             <>
@@ -59,7 +83,8 @@ export default function ProfileEditForm({
                 onBlur={field.handleBlur}
                 className="h-9 rounded border border-stone-200"
               />
-              {field.state.meta.errors.length ? (
+              {(field.state.meta.isTouched || field.state.meta.isDirty) &&
+              field.state.meta.errors.length ? (
                 <p className="text-red-500 text-sm leading-none">
                   {field.state.meta.errors.map((e) => e?.message).join(", ")}
                 </p>
@@ -83,7 +108,8 @@ export default function ProfileEditForm({
                 className="min-h-20 rounded border border-stone-200"
                 multiple
               />
-              {field.state.meta.errors.length ? (
+              {(field.state.meta.isTouched || field.state.meta.isDirty) &&
+              field.state.meta.errors.length ? (
                 <p className="text-red-500 text-sm leading-none">
                   {field.state.meta.errors.map((e) => e?.message).join(", ")}
                 </p>
@@ -105,7 +131,8 @@ export default function ProfileEditForm({
                 onBlur={field.handleBlur}
                 className="h-9 rounded border border-stone-200"
               />
-              {field.state.meta.errors.length ? (
+              {(field.state.meta.isTouched || field.state.meta.isDirty) &&
+              field.state.meta.errors.length ? (
                 <p className="text-red-500 text-sm leading-none">
                   {field.state.meta.errors.map((e) => e?.message).join(", ")}
                 </p>
@@ -127,9 +154,9 @@ export default function ProfileEditForm({
                 onBlur={field.handleBlur}
                 className="h-9 rounded border border-stone-200"
               />
-              {field.state.meta.errors.length ? (
+              {field.state.meta.isTouched && !field.state.meta.isValid ? (
                 <p className="text-red-500 text-sm leading-none">
-                  {field.state.meta.errors.map((e) => e?.message).join(", ")}
+                  {field.state.meta.errors.map((e) => e?.message)}
                 </p>
               ) : null}
               {field.state.meta.isValidating ? "Validating..." : null}
@@ -149,9 +176,9 @@ export default function ProfileEditForm({
                 onBlur={field.handleBlur}
                 className="h-9 rounded border border-stone-200"
               />
-              {field.state.meta.errors.length ? (
+              {field.state.meta.isTouched && !field.state.meta.isValid ? (
                 <p className="text-red-500 text-sm leading-none">
-                  {field.state.meta.errors.map((e) => e?.message).join(", ")}
+                  {field.state.meta.errors.map((e) => e?.message)}
                 </p>
               ) : null}
               {field.state.meta.isValidating ? "Validating..." : null}

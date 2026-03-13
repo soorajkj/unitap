@@ -6,11 +6,11 @@ import { Dialog } from "@base-ui/react/dialog";
 import { Cancel01Icon, Edit03Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { useState } from "react";
-import HandlesManager from "@/components/[dashboard]/HandlesManager";
+// import HandlesManager from "@/components/[dashboard]/HandlesManager";
 import ProfileEditForm from "@/components/[dashboard]/ProfileEditForm";
-import { useProfileQuery } from "@/hooks/useProfileQuery";
+import { useProfileQuery } from "@/hooks/useProfilesQuery";
 
-export default function ProfileEditor() {
+export default function ProfileManager() {
   const { data: profile } = useProfileQuery();
   const [open, setOpen] = useState(false);
 
@@ -36,7 +36,7 @@ export default function ProfileEditor() {
               onClick={() => setOpen(true)}
               className="relative inline-flex aspect-square h-8 w-fit shrink cursor-pointer items-center justify-center gap-1 whitespace-nowrap rounded-lg border border-transparent bg-transparent font-semibold text-base text-stone-950 transition hover:bg-stone-100 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 [&_svg]:text-neutral-400"
             >
-              {profile?.title}
+              Title
               <HugeiconsIcon icon={Edit03Icon} strokeWidth={1.5} />
             </Button>
           }
@@ -63,7 +63,7 @@ export default function ProfileEditor() {
             </Dialog.Popup>
           </Dialog.Portal>
         </Dialog.Root>
-        <HandlesManager />
+        {/* <HandlesManager /> */}
       </div>
     </div>
   );

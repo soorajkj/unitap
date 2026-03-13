@@ -11,7 +11,7 @@ export default async function Page({ params }: PageProps<"/[username]">) {
   const queryClient = getQueryClient();
 
   await queryClient.prefetchQuery({
-    queryKey: ["PROFILE", username],
+    queryKey: ["PROFILES", username],
     queryFn: () => getPublicProfile(username),
   });
 

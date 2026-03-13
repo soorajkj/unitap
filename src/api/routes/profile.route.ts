@@ -13,7 +13,7 @@ export const profileRoute = hono
     const db = c.get("prisma");
     const user = c.get("user");
 
-    const profile = await db.profile.findFirst({
+    const profile = await db.profile.findUnique({
       where: {
         userId: user.id,
       },
@@ -33,17 +33,16 @@ export const profileRoute = hono
       },
     });
 
-    return c.json(profile, 201);
+    return c.json(profile);
   })
   .patch("/", zValidator("json", profileUpdateSchema), async (c) => {
     const db = c.get("prisma");
     const user = c.get("user");
     const data = c.req.valid("json");
 
+    // chages it later (now upsert if no profile is found)
     const profile = await db.profile.upsert({
-      where: {
-        userId: user.id,
-      },
+      where: { userId: user.id },
       update: data,
       create: {
         userId: user.id,

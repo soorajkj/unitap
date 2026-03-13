@@ -11,6 +11,7 @@ const api = hono
   .createApp()
   .basePath("/api")
   .onError((error, c) => {
+    console.log(error);
     switch (true) {
       case error instanceof HTTPException:
         return error.getResponse();
