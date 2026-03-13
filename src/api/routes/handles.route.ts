@@ -1,5 +1,6 @@
 import { zValidator } from "@hono/zod-validator";
 import { authMiddleware } from "@/api/middlewares/auth.middleware";
+import { profileMiddleware } from "@/api/middlewares/profile.middleware";
 import { hono } from "@/lib/hono";
 import {
   createHandleSchema,
@@ -10,12 +11,13 @@ import {
 export const handlesRoute = hono
   .createApp()
   .use(authMiddleware)
+  .use(profileMiddleware)
   .get("/", async (c) => {
     const db = c.get("prisma");
-    const user = c.get("user");
+    const profileId = c.get("profileId");
 
     const handles = await db.handle.findMany({
-      where: { userId: user.id },
+      where: { profileId },
       include: { platform: true },
       orderBy: { order: "asc" },
     });
@@ -24,11 +26,11 @@ export const handlesRoute = hono
   })
   .post("/", zValidator("json", createHandleSchema), async (c) => {
     const db = c.get("prisma");
-    const user = c.get("user");
+    const profileId = c.get("profileId");
     const json = c.req.valid("json");
 
     const firstLink = await db.handle.findFirst({
-      where: { userId: user.id },
+      where: { profileId },
       orderBy: [{ order: "asc" }, { id: "asc" }],
       select: { order: true },
     });
@@ -37,7 +39,7 @@ export const handlesRoute = hono
 
     const handle = await db.handle.create({
       data: {
-        userId: user.id,
+        profileId,
         order: newOrder,
         ...json,
       },
@@ -46,17 +48,17 @@ export const handlesRoute = hono
     return c.json(handle);
   })
   .patch("/reorder", zValidator("json", reorderHandlesSchema), async (c) => {
-    const user = c.get("user");
     const db = c.get("prisma");
+    const profileId = c.get("profileId");
     const json = c.req.valid("json");
 
     await db.$transaction(
       json.platformIds.map((platformId, index) =>
         db.handle.update({
           where: {
-            platformId_userId: {
+            profileId_platformId: {
               platformId,
-              userId: user?.id,
+              profileId,
             },
           },
           data: { order: index },
@@ -68,13 +70,13 @@ export const handlesRoute = hono
   })
   .get("/:id", async (c) => {
     const db = c.get("prisma");
-    const user = c.get("user");
+    const profileId = c.get("profileId");
     const { id } = c.req.param();
 
-    const handle = await db.handle.findUnique({
+    const handle = await db.handle.findFirst({
       where: {
-        userId: user.id,
         id,
+        profileId,
       },
       include: { platform: true },
     });
@@ -83,31 +85,31 @@ export const handlesRoute = hono
   })
   .patch("/:id", zValidator("json", updateHandleSchema), async (c) => {
     const db = c.get("prisma");
-    const user = c.get("user");
+    const profileId = c.get("profileId");
     const { id } = c.req.param();
     const data = c.req.valid("json");
 
-    const result = await db.handle.updateMany({
+    const handle = await db.handle.update({
       where: {
-        userId: user.id,
         id,
+        profileId,
       },
       data,
     });
 
-    return c.json(result);
+    return c.json(handle);
   })
   .delete("/:id", async (c) => {
     const db = c.get("prisma");
-    const user = c.get("user");
+    const profileId = c.get("profileId");
     const { id } = c.req.param();
 
-    const result = await db.handle.delete({
+    const handle = await db.handle.delete({
       where: {
-        userId: user.id,
         id,
+        profileId,
       },
     });
 
-    return c.json(result);
+    return c.json(handle);
   });

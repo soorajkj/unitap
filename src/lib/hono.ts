@@ -6,6 +6,7 @@ type Variables = {
   prisma: typeof prisma;
   auth: typeof auth;
   user: NonNullable<typeof auth.$Infer.Session.user>;
+  profileId: string;
 };
 
 type Bindings = {

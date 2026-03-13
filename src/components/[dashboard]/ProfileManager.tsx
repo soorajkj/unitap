@@ -6,7 +6,7 @@ import { Dialog } from "@base-ui/react/dialog";
 import { Cancel01Icon, Edit03Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { useState } from "react";
-// import HandlesManager from "@/components/[dashboard]/HandlesManager";
+import HandlesManager from "@/components/[dashboard]/HandlesManager";
 import ProfileEditForm from "@/components/[dashboard]/ProfileEditForm";
 import { useProfileQuery } from "@/hooks/useProfilesQuery";
 
@@ -63,7 +63,7 @@ export default function ProfileManager() {
             </Dialog.Popup>
           </Dialog.Portal>
         </Dialog.Root>
-        {/* <HandlesManager /> */}
+        <HandlesManager />
       </div>
     </div>
   );
