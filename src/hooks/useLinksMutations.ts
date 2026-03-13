@@ -31,9 +31,9 @@ export const useLinksCreateMutation = () => {
           order: pre?.length ? pre[0].order - 1 : 0,
           archive: false,
           favorite: false,
-          userId: "optimistic-user",
           createdAt: new Date().toISOString(),
           updatedAt: new Date().toISOString(),
+          profileId: `optimistic-${Math.random().toString(36).substring(2, 9)}`,
         };
 
         return old ? [optimisticLink, ...old] : [optimisticLink];

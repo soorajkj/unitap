@@ -1,5 +1,6 @@
 import { zValidator } from "@hono/zod-validator";
 import { authMiddleware } from "@/api/middlewares/auth.middleware";
+import { profileMiddleware } from "@/api/middlewares/profile.middleware";
 import { hono } from "@/lib/hono";
 import {
   createLinkSchema,
@@ -10,12 +11,13 @@ import {
 export const linksRoute = hono
   .createApp()
   .use(authMiddleware)
+  .use(profileMiddleware)
   .get("/", async (c) => {
     const db = c.get("prisma");
-    const user = c.get("user");
+    const profileId = c.get("profileId");
 
     const links = await db.link.findMany({
-      where: { userId: user.id },
+      where: { profileId },
       orderBy: [{ order: "asc" }, { id: "asc" }],
     });
 
@@ -23,11 +25,11 @@ export const linksRoute = hono
   })
   .post("/", zValidator("json", createLinkSchema), async (c) => {
     const db = c.get("prisma");
-    const user = c.get("user");
+    const profileId = c.get("profileId");
     const json = c.req.valid("json");
 
     const firstLink = await db.link.findFirst({
-      where: { userId: user.id, archive: false },
+      where: { profileId, archive: false },
       orderBy: [{ order: "asc" }, { id: "asc" }],
       select: { order: true },
     });
@@ -36,7 +38,7 @@ export const linksRoute = hono
 
     const link = await db.link.create({
       data: {
-        userId: user.id,
+        profileId,
         order: newOrder,
         ...json,
       },
@@ -45,7 +47,7 @@ export const linksRoute = hono
     return c.json(link);
   })
   .patch("/reorder", zValidator("json", reorderLinksSchema), async (c) => {
-    const user = c.get("user");
+    const profileId = c.get("profileId");
     const db = c.get("prisma");
     const json = c.req.valid("json");
 
@@ -54,7 +56,7 @@ export const linksRoute = hono
         db.link.update({
           where: {
             id,
-            userId: user.id,
+            profileId,
           },
           data: { order: index },
         }),
@@ -65,13 +67,13 @@ export const linksRoute = hono
   })
   .patch("/:id", zValidator("json", updateLinkSchema), async (c) => {
     const db = c.get("prisma");
-    const user = c.get("user");
+    const profileId = c.get("profileId");
     const { id } = c.req.param();
     const json = c.req.valid("json");
 
     const result = await db.link.updateMany({
       where: {
-        userId: user.id,
+        profileId,
         id,
       },
       data: json,
@@ -81,12 +83,12 @@ export const linksRoute = hono
   })
   .delete("/:id", async (c) => {
     const db = c.get("prisma");
-    const user = c.get("user");
+    const profileId = c.get("profileId");
     const { id } = c.req.param();
 
     const result = await db.link.deleteMany({
       where: {
-        userId: user.id,
+        profileId,
         id,
       },
     });
