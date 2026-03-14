@@ -1,11 +1,11 @@
 import { createFactory } from "hono/factory";
-import { auth } from "@/lib/auth";
+import { auth, type User } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 
 type Variables = {
   prisma: typeof prisma;
   auth: typeof auth;
-  user: NonNullable<typeof auth.$Infer.Session.user>;
+  user: NonNullable<User>;
   profileId: string;
 };
 
