@@ -24,15 +24,15 @@ export default function Share() {
 
   return (
     <Popover.Root>
-      <Popover.Trigger className="relative inline-flex h-9 shrink cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-full border border-neutral-200 bg-white px-4 py-2 text-neutral-900 text-sm transition hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-3.5 [&_svg]:shrink-0">
+      <Popover.Trigger className="relative inline-flex h-9 shrink cursor-pointer items-center justify-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 text-sm whitespace-nowrap text-neutral-900 transition hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-3.5 [&_svg]:shrink-0">
         <span className="inline-block w-full max-w-60 truncate">Share</span>
         <HugeiconsIcon icon={Globe02Icon} />
       </Popover.Trigger>
       <Popover.Portal>
         <Popover.Backdrop />
         <Popover.Positioner sideOffset={12} className="isolate z-50">
-          <Popover.Popup className="data-closed:fade-out-0 data-open:fade-in-0 data-closed:zoom-out-95 data-open:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-[side=inline-start]:slide-in-from-right-2 data-[side=inline-end]:slide-in-from-left-2 z-50 flex w-96 origin-(--transform-origin) flex-col gap-2.5 rounded-2xl bg-white p-6 text-sm shadow outline-hidden duration-100 data-closed:animate-out data-open:animate-in">
-            <Popover.Title className="font-medium text-base">
+          <Popover.Popup className="data-closed:fade-out-0 data-open:fade-in-0 data-closed:zoom-out-95 data-open:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-[side=inline-start]:slide-in-from-right-2 data-[side=inline-end]:slide-in-from-left-2 data-closed:animate-out data-open:animate-in z-50 flex w-96 origin-(--transform-origin) flex-col gap-2.5 rounded-2xl bg-white p-6 text-sm shadow outline-hidden duration-100">
+            <Popover.Title className="text-base font-medium">
               Share
             </Popover.Title>
             <div className="grid gap-4">
@@ -40,13 +40,13 @@ export default function Share() {
                 <Input
                   readOnly={true}
                   defaultValue="https://unitapin.vercel.app/jakijemyre"
-                  className="h-9 w-full min-w-0 truncate rounded-lg border border-neutral-100 bg-transparent px-2.5 py-1 text-base outline-none transition-colors selection:bg-violet-500 selection:text-white file:inline-flex file:h-6 file:border-0 file:bg-transparent file:font-medium file:text-foreground file:text-sm placeholder:text-neutral-400 read-only:bg-neutral-50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:bg-neutral-100 disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 md:text-sm"
+                  className="file:text-foreground aria-invalid:border-destructive aria-invalid:ring-destructive/20 h-9 w-full min-w-0 truncate rounded-lg border border-neutral-100 bg-transparent px-2.5 py-1 text-base transition-colors outline-none selection:bg-violet-500 selection:text-white file:inline-flex file:h-6 file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-neutral-400 read-only:bg-neutral-50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:bg-neutral-100 disabled:opacity-50 aria-invalid:ring-3 md:text-sm"
                 />
                 <Button
                   onClick={() =>
                     handleCopyLink("https://unitapin.vercel.app/jakijemyre")
                   }
-                  className="relative inline-flex aspect-square h-9 shrink cursor-pointer items-center justify-center gap-3 whitespace-nowrap rounded-lg border border-transparent bg-neutral-800 text-sm text-white transition hover:bg-neutral-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0"
+                  className="relative inline-flex aspect-square h-9 shrink cursor-pointer items-center justify-center gap-3 rounded-lg border border-transparent bg-neutral-800 text-sm whitespace-nowrap text-white transition hover:bg-neutral-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0"
                 >
                   <HugeiconsIcon icon={Copy01Icon} />
                 </Button>

@@ -23,7 +23,7 @@ export default function ReactQueryProvider({
               <div className="flex flex-col gap-4 p-4">
                 <p className="text-sm">
                   An error occurred:{" "}
-                  <span className="whitespace-normal font-mono">
+                  <span className="font-mono whitespace-normal">
                     {JSON.stringify(error)}
                   </span>
                 </p>

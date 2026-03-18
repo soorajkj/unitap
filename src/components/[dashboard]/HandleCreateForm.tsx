@@ -85,7 +85,7 @@ export default function HandleCreateForm({
                   </Select.SelectContent>
                 </Select.SelectRoot>
                 {field.state.meta.isTouched && !field.state.meta.isValid ? (
-                  <p className="text-red-500 text-sm leading-none">
+                  <p className="text-sm leading-none text-red-500">
                     {field.state.meta.errors.map((e) => e?.message)}
                   </p>
                 ) : null}
@@ -108,7 +108,7 @@ export default function HandleCreateForm({
                   className="h-10 rounded-md border border-stone-900"
                 />
                 {field.state.meta.isTouched && !field.state.meta.isValid ? (
-                  <p className="text-red-500 text-sm leading-none">
+                  <p className="text-sm leading-none text-red-500">
                     {field.state.meta.errors.map((e) => e?.message)}
                   </p>
                 ) : null}

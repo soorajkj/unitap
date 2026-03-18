@@ -62,7 +62,7 @@ export default function ProfileEditForm({
               />
               {(field.state.meta.isTouched || field.state.meta.isDirty) &&
               field.state.meta.errors.length ? (
-                <p className="text-red-500 text-sm leading-none">
+                <p className="text-sm leading-none text-red-500">
                   {field.state.meta.errors.map((e) => e?.message).join(", ")}
                 </p>
               ) : null}
@@ -85,7 +85,7 @@ export default function ProfileEditForm({
               />
               {(field.state.meta.isTouched || field.state.meta.isDirty) &&
               field.state.meta.errors.length ? (
-                <p className="text-red-500 text-sm leading-none">
+                <p className="text-sm leading-none text-red-500">
                   {field.state.meta.errors.map((e) => e?.message).join(", ")}
                 </p>
               ) : null}
@@ -110,7 +110,7 @@ export default function ProfileEditForm({
               />
               {(field.state.meta.isTouched || field.state.meta.isDirty) &&
               field.state.meta.errors.length ? (
-                <p className="text-red-500 text-sm leading-none">
+                <p className="text-sm leading-none text-red-500">
                   {field.state.meta.errors.map((e) => e?.message).join(", ")}
                 </p>
               ) : null}
@@ -133,7 +133,7 @@ export default function ProfileEditForm({
               />
               {(field.state.meta.isTouched || field.state.meta.isDirty) &&
               field.state.meta.errors.length ? (
-                <p className="text-red-500 text-sm leading-none">
+                <p className="text-sm leading-none text-red-500">
                   {field.state.meta.errors.map((e) => e?.message).join(", ")}
                 </p>
               ) : null}
@@ -155,7 +155,7 @@ export default function ProfileEditForm({
                 className="h-9 rounded border border-stone-200"
               />
               {field.state.meta.isTouched && !field.state.meta.isValid ? (
-                <p className="text-red-500 text-sm leading-none">
+                <p className="text-sm leading-none text-red-500">
                   {field.state.meta.errors.map((e) => e?.message)}
                 </p>
               ) : null}
@@ -177,7 +177,7 @@ export default function ProfileEditForm({
                 className="h-9 rounded border border-stone-200"
               />
               {field.state.meta.isTouched && !field.state.meta.isValid ? (
-                <p className="text-red-500 text-sm leading-none">
+                <p className="text-sm leading-none text-red-500">
                   {field.state.meta.errors.map((e) => e?.message)}
                 </p>
               ) : null}

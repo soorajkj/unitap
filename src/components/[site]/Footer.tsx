@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden">
@@ -12,176 +14,176 @@ export default function Footer() {
           </div>
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 lg:gap-12">
             <div>
-              <h3 className="mb-4 font-medium text-sm text-white">Resources</h3>
+              <h3 className="mb-4 text-sm font-medium text-white">Resources</h3>
               <ul className="space-y-3">
                 <li>
-                  <a
-                    className="text-neutral-400 text-sm transition hover:underline"
+                  <Link
+                    className="text-sm text-neutral-400 transition hover:underline"
                     href="https://docs.searchable.com"
                   >
                     Documentation
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    className="text-neutral-400 text-sm transition hover:underline"
+                  <Link
+                    className="text-sm text-neutral-400 transition hover:underline"
                     href="/resources"
                   >
                     Resources
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    className="text-neutral-400 text-sm transition hover:underline"
+                  <Link
+                    className="text-sm text-neutral-400 transition hover:underline"
                     href="/blog"
                   >
                     Blog
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    className="text-neutral-400 text-sm transition hover:underline"
+                  <Link
+                    className="text-sm text-neutral-400 transition hover:underline"
                     href="/guide"
                   >
                     Guides
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    className="text-neutral-400 text-sm transition hover:underline"
+                  <Link
+                    className="text-sm text-neutral-400 transition hover:underline"
                     href="/data"
                   >
                     AI Search Data
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
             <div>
-              <h3 className="mb-4 font-medium text-sm text-white">
+              <h3 className="mb-4 text-sm font-medium text-white">
                 Free Tools
               </h3>
               <ul className="space-y-3">
                 <li>
-                  <a
-                    className="text-neutral-400 text-sm transition hover:underline"
+                  <Link
+                    className="text-sm text-neutral-400 transition hover:underline"
                     href="/chatgpt-product-visibility-report"
                   >
                     ChatGPT Shopping Checker
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    className="text-neutral-400 text-sm transition hover:underline"
+                  <Link
+                    className="text-sm text-neutral-400 transition hover:underline"
                     href="/try-agent"
                   >
                     Free AI SEO Agent
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    className="text-neutral-400 text-sm transition hover:underline"
+                  <Link
+                    className="text-sm text-neutral-400 transition hover:underline"
                     href="/free-visibility-report"
                   >
                     Free AI Visibility Score
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    className="text-neutral-400 text-sm transition hover:underline"
+                  <Link
+                    className="text-sm text-neutral-400 transition hover:underline"
                     href="/ucp-readiness"
                   >
                     AI Shopping Agent Checker
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
             <div>
-              <h3 className="mb-4 font-medium text-sm text-white">Company</h3>
+              <h3 className="mb-4 text-sm font-medium text-white">Company</h3>
               <ul className="space-y-3">
                 <li>
-                  <a
-                    className="text-neutral-400 text-sm transition hover:underline"
+                  <Link
+                    className="text-sm text-neutral-400 transition hover:underline"
                     href="/about"
                   >
                     About
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    className="text-neutral-400 text-sm transition hover:underline"
+                  <Link
+                    className="text-sm text-neutral-400 transition hover:underline"
                     href="/customers"
                   >
                     Customers
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    className="text-neutral-400 text-sm transition hover:underline"
+                  <Link
+                    className="text-sm text-neutral-400 transition hover:underline"
                     href="/authors"
                   >
                     Authors
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    className="text-neutral-400 text-sm transition hover:underline"
+                  <Link
+                    className="text-sm text-neutral-400 transition hover:underline"
                     href="/contact"
                   >
                     Contact
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    className="text-neutral-400 text-sm transition hover:underline"
+                  <Link
+                    className="text-sm text-neutral-400 transition hover:underline"
                     href="/careers"
                   >
                     Careers
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    className="text-neutral-400 text-sm transition hover:underline"
+                  <Link
+                    className="text-sm text-neutral-400 transition hover:underline"
                     href="https://join.slack.com/t/searchablecommunity/shared_invite/zt-3jynfw88g-P5LjrLsPRpRBjHZiMUDBpA"
                   >
                     Community
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
             <div>
-              <h3 className="mb-4 font-medium text-sm text-white">Compare</h3>
+              <h3 className="mb-4 text-sm font-medium text-white">Compare</h3>
               <ul className="space-y-3">
                 <li>
-                  <a
-                    className="text-neutral-400 text-sm transition hover:underline"
+                  <Link
+                    className="text-sm text-neutral-400 transition hover:underline"
                     href="/compare"
                   >
                     All Comparisons
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    className="text-neutral-400 text-sm transition hover:underline"
+                  <Link
+                    className="text-sm text-neutral-400 transition hover:underline"
                     href="/compare/searchable-vs-semrush"
                   >
                     vs Semrush
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    className="text-neutral-400 text-sm transition hover:underline"
+                  <Link
+                    className="text-sm text-neutral-400 transition hover:underline"
                     href="/compare/searchable-vs-ahrefs"
                   >
                     vs Ahrefs
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    className="text-neutral-400 text-sm transition hover:underline"
+                  <Link
+                    className="text-sm text-neutral-400 transition hover:underline"
                     href="/compare/searchable-vs-profound"
                   >
                     vs Profound
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -191,16 +193,16 @@ export default function Footer() {
       <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-6 py-6 lg:flex-row lg:items-start lg:justify-between">
           <div className="w-full max-w-3xl space-y-2">
-            <p className="text-neutral-400 text-xs">
+            <p className="text-xs text-neutral-400">
               © {/* */}
               {new Date().getFullYear()}
-              {/* */} Unitap.ai | "Unitap" and the Unitap logo are trademarks of
-              the company
+              {/* */} Unitap.ai | &quot;Unitap&quot; and the Unitap logo are
+              trademarks of the company
             </p>
-            <p className="text-neutral-400 text-xs">
+            <p className="text-xs text-neutral-400">
               Registered in India. All rights reserved.
             </p>
-            <p className="text-neutral-400 text-xs leading-relaxed">
+            <p className="text-xs leading-relaxed text-neutral-400">
               DISCLAIMER: The content on this website is provided for general
               informational purposes only and does not constitute professional
               advice. We make no representations or warranties regarding the

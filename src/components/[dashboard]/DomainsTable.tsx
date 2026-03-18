@@ -55,8 +55,8 @@ const domains = [
 export function DomainsTable() {
   return (
     <div className="flex h-full flex-col bg-white p-6">
-      <div className="mb-6 flex items-center gap-4 border-gray-100 border-b pb-1 font-medium text-sm">
-        <Button className="border-gray-900 border-b-2 px-1 pb-3 text-gray-900">
+      <div className="mb-6 flex items-center gap-4 border-b border-gray-100 pb-1 text-sm font-medium">
+        <Button className="border-b-2 border-gray-900 px-1 pb-3 text-gray-900">
           Domains
         </Button>
         <Button className="px-1 pb-3 text-gray-400 transition-colors hover:text-gray-600">
@@ -67,7 +67,7 @@ export function DomainsTable() {
       <div className="overflow-x-auto">
         <table className="w-full border border-stone-100">
           <thead>
-            <tr className="border-gray-100 border-b text-left font-medium text-gray-400 text-xs [&_th]:border-stone-100 [&_th]:border-r">
+            <tr className="border-b border-gray-100 text-left text-xs font-medium text-gray-400 [&_th]:border-r [&_th]:border-stone-100">
               <th className="w-8 p-2 font-normal">#</th>
               <th className="p-2 font-normal">Domain</th>
               <th className="p-2 font-normal">Type</th>
@@ -79,9 +79,9 @@ export function DomainsTable() {
             {domains.map((item) => (
               <tr
                 key={item.id}
-                className="border-gray-50 border-b transition-colors last:border-0 hover:bg-gray-50/50 [&_td]:border-stone-100 [&_td]:border-r"
+                className="border-b border-gray-50 transition-colors last:border-0 hover:bg-gray-50/50 [&_td]:border-r [&_td]:border-stone-100"
               >
-                <td className="p-2 font-mono text-gray-400 text-xs">
+                <td className="p-2 font-mono text-xs text-gray-400">
                   {item.id}
                 </td>
                 <td className="p-2">
@@ -101,7 +101,7 @@ export function DomainsTable() {
                 <td className="p-2">
                   <span
                     className={cn(
-                      "rounded px-2 py-0.5 font-semibold text-[11px] uppercase tracking-wide",
+                      "rounded px-2 py-0.5 text-[11px] font-semibold tracking-wide uppercase",
                       item.typeColor,
                     )}
                   >

@@ -4,7 +4,7 @@ export default function Hero() {
       <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="relative z-10 py-24 lg:py-48">
           <div className="flex size-full flex-col items-center justify-center gap-4 text-center">
-            <h1 className="w-full max-w-2xl font-display font-medium text-5xl text-white md:text-6xl lg:text-7xl">
+            <h1 className="font-display w-full max-w-2xl text-5xl font-medium text-white md:text-6xl lg:text-7xl">
               Bring all your online presence into one powerful destination.
             </h1>
             <p className="w-full max-w-xl text-base text-neutral-400">

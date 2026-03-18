@@ -24,7 +24,7 @@ export default function UserActions() {
 
   return (
     <Menu.Root>
-      <Menu.Trigger className="relative inline-flex w-full shrink cursor-pointer items-center gap-2 whitespace-nowrap rounded-full border border-transparent bg-neutral-50 px-2 py-2 text-neutral-900 text-sm transition hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-3.5 [&_svg]:shrink-0">
+      <Menu.Trigger className="relative inline-flex w-full shrink cursor-pointer items-center gap-2 rounded-full border border-transparent bg-neutral-50 px-2 py-2 text-sm whitespace-nowrap text-neutral-900 transition hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-3.5 [&_svg]:shrink-0">
         <div className="size-6 rounded-full bg-neutral-300 [&_svg]:size-full">
           <svg
             width={145}
@@ -64,17 +64,17 @@ export default function UserActions() {
       <Menu.Portal>
         <Menu.Backdrop />
         <Menu.Positioner sideOffset={4} className="isolate z-50">
-          <Menu.Popup className="data-closed:fade-out-0 data-open:fade-in-0 data-closed:zoom-out-95 data-open:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-[side=inline-start]:slide-in-from-right-2 data-[side=inline-end]:slide-in-from-left-2 z-50 flex w-60 origin-(--transform-origin) flex-col rounded-2xl bg-white p-1 text-sm shadow outline-hidden duration-100 data-closed:animate-out data-open:animate-in">
-            <Menu.Item className="relative inline-flex w-full shrink cursor-pointer items-center gap-2 whitespace-nowrap rounded-full border border-transparent bg-neutral-50 px-2 py-1.5 font-medium text-neutral-900 text-sm transition hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-3.5 [&_svg]:shrink-0">
+          <Menu.Popup className="data-closed:fade-out-0 data-open:fade-in-0 data-closed:zoom-out-95 data-open:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-[side=inline-start]:slide-in-from-right-2 data-[side=inline-end]:slide-in-from-left-2 data-closed:animate-out data-open:animate-in z-50 flex w-60 origin-(--transform-origin) flex-col rounded-2xl bg-white p-1 text-sm shadow outline-hidden duration-100">
+            <Menu.Item className="relative inline-flex w-full shrink cursor-pointer items-center gap-2 rounded-full border border-transparent bg-neutral-50 px-2 py-1.5 text-sm font-medium whitespace-nowrap text-neutral-900 transition hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-3.5 [&_svg]:shrink-0">
               <HugeiconsIcon icon={UserIcon} strokeWidth={1.8} />
               <span>Account</span>
             </Menu.Item>
-            <Menu.Item className="relative inline-flex w-full shrink cursor-pointer items-center gap-2 whitespace-nowrap rounded-full border border-transparent bg-neutral-50 px-2 py-1.5 font-medium text-neutral-900 text-sm transition hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-3.5 [&_svg]:shrink-0">
+            <Menu.Item className="relative inline-flex w-full shrink cursor-pointer items-center gap-2 rounded-full border border-transparent bg-neutral-50 px-2 py-1.5 text-sm font-medium whitespace-nowrap text-neutral-900 transition hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-3.5 [&_svg]:shrink-0">
               <HugeiconsIcon icon={Zap} strokeWidth={1.8} />
               <span>Upgrade</span>
             </Menu.Item>
             <Menu.Item
-              className="relative inline-flex w-full shrink cursor-pointer items-center gap-2 whitespace-nowrap rounded-full border border-transparent bg-neutral-50 px-2 py-1.5 font-medium text-neutral-900 text-sm transition hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-3.5 [&_svg]:shrink-0"
+              className="relative inline-flex w-full shrink cursor-pointer items-center gap-2 rounded-full border border-transparent bg-neutral-50 px-2 py-1.5 text-sm font-medium whitespace-nowrap text-neutral-900 transition hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-3.5 [&_svg]:shrink-0"
               onClick={handleSignout}
             >
               <HugeiconsIcon icon={Logout05Icon} strokeWidth={1.8} />

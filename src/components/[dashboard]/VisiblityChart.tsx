@@ -67,7 +67,7 @@ export function VisibilityChart() {
       <div className="mb-2 flex items-center justify-between">
         <div>
           <h3 className="font-semibold text-gray-900">Domains by Type</h3>
-          <p className="mt-1 text-gray-500 text-sm">
+          <p className="mt-1 text-sm text-gray-500">
             Most used domains categorized by type
           </p>
         </div>

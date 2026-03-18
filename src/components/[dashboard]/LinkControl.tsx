@@ -51,7 +51,7 @@ export default function LinkControl({ link }: LinkControlProps) {
           <div className="flex w-full gap-4 rounded-xl p-3">
             <div className="flex w-full flex-col gap-2">
               <div className="flex flex-1 flex-col gap-1">
-                <p className="font-medium text-sm text-stone-950">
+                <p className="text-sm font-medium text-stone-950">
                   {link.title}
                 </p>
                 <p className="text-xs underline decoration-stone-300 underline-offset-2">
@@ -86,7 +86,7 @@ export default function LinkControl({ link }: LinkControlProps) {
                       />
                       <Tooltip.Portal>
                         <Tooltip.Positioner side="bottom" sideOffset={4}>
-                          <Tooltip.Popup className="rounded-md bg-stone-950 px-1.5 py-1 font-medium text-white text-xs">
+                          <Tooltip.Popup className="rounded-md bg-stone-950 px-1.5 py-1 text-xs font-medium text-white">
                             <Tooltip.Arrow />
                             Favourite
                           </Tooltip.Popup>
@@ -113,7 +113,7 @@ export default function LinkControl({ link }: LinkControlProps) {
                       />
                       <Tooltip.Portal>
                         <Tooltip.Positioner side="bottom" sideOffset={4}>
-                          <Tooltip.Popup className="rounded-md bg-stone-950 px-1.5 py-1 font-medium text-white text-xs">
+                          <Tooltip.Popup className="rounded-md bg-stone-950 px-1.5 py-1 text-xs font-medium text-white">
                             <Tooltip.Arrow />
                             Archive
                           </Tooltip.Popup>
@@ -132,7 +132,7 @@ export default function LinkControl({ link }: LinkControlProps) {
                       />
                       <Tooltip.Portal>
                         <Tooltip.Positioner side="bottom" sideOffset={4}>
-                          <Tooltip.Popup className="rounded-md bg-stone-950 px-1.5 py-1 font-medium text-white text-xs">
+                          <Tooltip.Popup className="rounded-md bg-stone-950 px-1.5 py-1 text-xs font-medium text-white">
                             <Tooltip.Arrow />
                             Analytics
                           </Tooltip.Popup>
@@ -157,7 +157,7 @@ export default function LinkControl({ link }: LinkControlProps) {
                     />
                     <Tooltip.Portal>
                       <Tooltip.Positioner side="bottom" sideOffset={4}>
-                        <Tooltip.Popup className="rounded-md bg-stone-950 px-1.5 py-1 font-medium text-white text-xs">
+                        <Tooltip.Popup className="rounded-md bg-stone-950 px-1.5 py-1 text-xs font-medium text-white">
                           <Tooltip.Arrow />
                           Delete
                         </Tooltip.Popup>
@@ -178,11 +178,12 @@ export default function LinkControl({ link }: LinkControlProps) {
               className="overflow-hidden"
             >
               <div className="flex items-center justify-center bg-stone-300/40 py-1">
-                <p className="font-medium text-sm text-stone-950">Delete</p>
+                <p className="text-sm font-medium text-stone-950">Delete</p>
               </div>
               <div className="flex items-center justify-between p-3">
-                <p className="mr-4 text-red-600 text-xs">
-                  Are you sure want to delete this item forever? can't be undo
+                <p className="mr-4 text-xs text-red-600">
+                  Are you sure want to delete this item forever? can&apos;t be
+                  undo
                 </p>
                 <div className="flex items-center gap-1">
                   <Button

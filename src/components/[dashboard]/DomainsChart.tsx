@@ -30,7 +30,7 @@ export function DomainsChart() {
       <div className="mb-2 flex items-center justify-between">
         <div>
           <h3 className="font-semibold text-gray-900">Domains by Type</h3>
-          <p className="mt-1 text-gray-500 text-sm">
+          <p className="mt-1 text-sm text-gray-500">
             Most used domains categorized by type
           </p>
         </div>
@@ -64,8 +64,8 @@ export function DomainsChart() {
           </ResponsiveContainer>
           {/* Center Text */}
           <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center">
-            <span className="font-bold text-2xl text-gray-900">12%</span>
-            <span className="font-semibold text-blue-600 text-xs uppercase tracking-wide">
+            <span className="text-2xl font-bold text-gray-900">12%</span>
+            <span className="text-xs font-semibold tracking-wide text-blue-600 uppercase">
               UGC
             </span>
           </div>
@@ -81,7 +81,7 @@ export function DomainsChart() {
               />
               <span
                 className={cn(
-                  "font-medium text-xs",
+                  "text-xs font-medium",
                   item.name === "Competitor"
                     ? "text-pink-700"
                     : "text-gray-600",

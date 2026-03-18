@@ -5,7 +5,7 @@ export function FieldInfo({ field }: { field: AnyFieldApi }) {
   return (
     <Fragment>
       {field.state.meta.isTouched && !field.state.meta.isValid ? (
-        <span className="text-red-500 text-xs">
+        <span className="text-xs text-red-500">
           {field.state.meta.errors.map((err) => err.message).join(",")}
         </span>
       ) : null}

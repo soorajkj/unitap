@@ -23,7 +23,7 @@ export default function ProfileManager() {
       <div className="relative">
         <Avatar.Root className="flex aspect-square size-16">
           <Avatar.Image src="" className="size-full" />
-          <Avatar.Fallback className="inline-flex size-full items-center justify-center rounded-full bg-violet-500 font-medium text-2xl text-white">
+          <Avatar.Fallback className="inline-flex size-full items-center justify-center rounded-full bg-violet-500 text-2xl font-medium text-white">
             SG
           </Avatar.Fallback>
         </Avatar.Root>
@@ -34,7 +34,7 @@ export default function ProfileManager() {
           render={
             <Button
               onClick={() => setOpen(true)}
-              className="relative inline-flex aspect-square h-8 w-fit shrink cursor-pointer items-center justify-center gap-1 whitespace-nowrap rounded-lg border border-transparent bg-transparent font-semibold text-base text-stone-950 transition hover:bg-stone-100 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 [&_svg]:text-neutral-400"
+              className="relative inline-flex aspect-square h-8 w-fit shrink cursor-pointer items-center justify-center gap-1 rounded-lg border border-transparent bg-transparent text-base font-semibold whitespace-nowrap text-stone-950 transition hover:bg-stone-100 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 [&_svg]:text-neutral-400"
             >
               Title
               <HugeiconsIcon icon={Edit03Icon} strokeWidth={1.5} />
@@ -48,13 +48,13 @@ export default function ProfileManager() {
         >
           <Dialog.Portal>
             <Dialog.Backdrop className="fixed inset-0 z-30 min-h-dvh bg-stone-950/40 transition-all duration-150 data-ending-style:opacity-0 data-starting-style:opacity-0 supports-[-webkit-touch-callout:none]:absolute" />
-            <Dialog.Popup className="-mt-8 -translate-x-1/2 -translate-y-1/2 fixed top-1/2 left-1/2 z-40 w-full max-w-md rounded-2xl bg-gray-50 p-6 text-gray-900 outline-1 outline-gray-200 transition-all duration-150 data-ending-style:scale-90 data-starting-style:scale-90 data-ending-style:opacity-0 data-starting-style:opacity-0 dark:outline-gray-300">
+            <Dialog.Popup className="fixed top-1/2 left-1/2 z-40 -mt-8 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-gray-50 p-6 text-gray-900 outline-1 outline-gray-200 transition-all duration-150 data-ending-style:scale-90 data-ending-style:opacity-0 data-starting-style:scale-90 data-starting-style:opacity-0 dark:outline-gray-300">
               <div className="flex flex-col gap-4">
                 <div className="flex items-center justify-between gap-2">
-                  <Dialog.Title className="font-medium text-base">
+                  <Dialog.Title className="text-base font-medium">
                     Update profile
                   </Dialog.Title>
-                  <Dialog.Close className="relative inline-flex aspect-square size-7 shrink cursor-pointer items-center justify-center gap-1 whitespace-nowrap rounded-lg border border-transparent text-xs leading-none transition focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0">
+                  <Dialog.Close className="relative inline-flex aspect-square size-7 shrink cursor-pointer items-center justify-center gap-1 rounded-lg border border-transparent text-xs leading-none whitespace-nowrap transition focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0">
                     <HugeiconsIcon icon={Cancel01Icon} />
                   </Dialog.Close>
                 </div>

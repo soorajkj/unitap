@@ -9,13 +9,13 @@ export default function FAQs() {
         <div className="grid gap-24 py-24">
           <div className="grid place-items-center">
             <div className="w-full max-w-xl space-y-4 text-center">
-              <p className="font-mono text-neutral-300 text-sm uppercase">
-                <span className="text-neutral-600">[04]</span> FAQ's
+              <p className="font-mono text-sm text-neutral-300 uppercase">
+                <span className="text-neutral-600">[04]</span> FAQ&apos;s
               </p>
-              <h2 className="text-balance font-display text-4xl text-white sm:text-4xl lg:text-5xl">
+              <h2 className="font-display text-4xl text-balance text-white sm:text-4xl lg:text-5xl">
                 Still Unsure? Let’s Clear It Up
               </h2>
-              <p className="text-balance text-base text-neutral-400">
+              <p className="text-base text-balance text-neutral-400">
                 Get clear answers about how Unitap works, pricing,
                 customization, and everything you need to launch your page with
                 confidence.
@@ -29,7 +29,7 @@ export default function FAQs() {
             {FAQS.map((faq, i) => (
               <Accordion.Item
                 key={i.toString()}
-                className="relative overflow-hidden rounded-xl bg-neutral-900/80 after:pointer-events-none after:absolute after:inset-0 after:inset-shadow-white/10 after:inset-shadow-xs after:rounded-xl focus-visible:z-1 focus-visible:outline focus-visible:outline-blue-800"
+                className="relative overflow-hidden rounded-xl bg-neutral-900/80 after:pointer-events-none after:absolute after:inset-0 after:rounded-xl after:inset-shadow-xs after:inset-shadow-white/10 focus-visible:z-1 focus-visible:outline focus-visible:outline-blue-800"
               >
                 <Accordion.Header>
                   <Accordion.Trigger className="group flex w-full cursor-pointer items-baseline justify-between gap-4 p-4 text-left text-white">
@@ -37,12 +37,12 @@ export default function FAQs() {
                     <div className="inline-flex size-4 shrink items-center justify-center">
                       <HugeiconsIcon
                         icon={PlusSignIcon}
-                        className="size-3.5 shrink-0 transition-all ease-out group-data-panel-open:rotate-45 group-data-panel-open:scale-110"
+                        className="size-3.5 shrink-0 transition-all ease-out group-data-panel-open:scale-110 group-data-panel-open:rotate-45"
                       />
                     </div>
                   </Accordion.Trigger>
                 </Accordion.Header>
-                <Accordion.Panel className="h-(--accordion-panel-height) select-none overflow-hidden text-base text-neutral-400 transition-all ease-out data-ending-style:h-0 data-starting-style:h-0">
+                <Accordion.Panel className="h-(--accordion-panel-height) overflow-hidden text-base text-neutral-400 transition-all ease-out select-none data-ending-style:h-0 data-starting-style:h-0">
                   <div className="relative p-4 pt-0">{faq.answer}</div>
                 </Accordion.Panel>
               </Accordion.Item>

@@ -30,8 +30,9 @@ import { cn } from "tailwind-variants";
 
 type SortableItemBase = { id: UniqueIdentifier };
 
-export interface SortableListProps<T extends SortableItemBase>
-  extends ComponentProps<"ul"> {
+export interface SortableListProps<
+  T extends SortableItemBase,
+> extends ComponentProps<"ul"> {
   items: T[];
   onDragEventEnd: (items: T[]) => void;
   renderItem: (item: T) => ReactNode;

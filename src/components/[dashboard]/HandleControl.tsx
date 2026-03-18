@@ -37,7 +37,7 @@ export default function HandleControl({ handle }: HandleControlProps) {
               </div>
             </div>
             <div className="flex flex-1 flex-col gap-1">
-              <p className="font-semibold text-base">{handle.platform.name}</p>
+              <p className="text-base font-semibold">{handle.platform.name}</p>
             </div>
             <Button
               variant="secondary"

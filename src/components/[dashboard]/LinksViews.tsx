@@ -36,7 +36,7 @@ export default function LinksViews() {
           <Tabs.Tab
             key={view.id}
             value={view.id}
-            className="flex h-8 flex-1 cursor-pointer select-none items-center justify-center gap-1 whitespace-nowrap break-keep rounded-lg border-0 px-2 font-medium text-sm text-stone-800 outline-none before:inset-x-0 before:inset-y-1 before:rounded-sm before:outline-blue-800 hover:text-stone-900 focus-visible:relative focus-visible:before:absolute focus-visible:before:outline data-active:bg-white data-active:shadow-2xs [&_svg]:size-4"
+            className="flex h-8 flex-1 cursor-pointer items-center justify-center gap-1 rounded-lg border-0 px-2 text-sm font-medium break-keep whitespace-nowrap text-stone-800 outline-none select-none before:inset-x-0 before:inset-y-1 before:rounded-sm before:outline-blue-800 hover:text-stone-900 focus-visible:relative focus-visible:before:absolute focus-visible:before:outline data-active:bg-white data-active:shadow-2xs [&_svg]:size-4"
             disabled={view.disabled}
           >
             <HugeiconsIcon icon={view.icon} />

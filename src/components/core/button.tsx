@@ -4,8 +4,7 @@ import { Button as ButtonPrimitives } from "@base-ui/react/button";
 import { cn, tv, type VariantProps } from "tailwind-variants";
 
 interface ButtonProps
-  extends ButtonPrimitives.Props,
-    VariantProps<typeof buttonStyles> {}
+  extends ButtonPrimitives.Props, VariantProps<typeof buttonStyles> {}
 
 export default function Button({
   variant,

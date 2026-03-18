@@ -11,13 +11,13 @@ export default function Testimonials() {
         <div className="grid gap-24 py-24">
           <div className="grid place-items-center">
             <div className="w-full max-w-xl space-y-4 text-center">
-              <p className="font-mono text-neutral-300 text-sm uppercase">
+              <p className="font-mono text-sm text-neutral-300 uppercase">
                 <span className="text-neutral-600">[03]</span> Testimonials
               </p>
-              <h2 className="text-balance font-display text-4xl text-white sm:text-4xl lg:text-5xl">
+              <h2 className="font-display text-4xl text-balance text-white sm:text-4xl lg:text-5xl">
                 Hear What People Are Saying
               </h2>
-              <p className="text-balance text-base text-neutral-400">
+              <p className="text-base text-balance text-neutral-400">
                 See how Unitap helps creators, developers, and brands share
                 everything they do with one simple Tap. Our users love how easy
                 it is to showcase their links and track engagement.
@@ -37,9 +37,9 @@ export default function Testimonials() {
 
 function Testimonial({ testimonial }: { testimonial: Testimonial }) {
   return (
-    <div className="relative grid w-full overflow-hidden rounded-xl bg-neutral-900/80 p-6 after:pointer-events-none after:absolute after:inset-0 after:inset-shadow-white/10 after:inset-shadow-xs after:rounded-xl focus-visible:z-1 focus-visible:outline focus-visible:outline-blue-800">
+    <div className="relative grid w-full overflow-hidden rounded-xl bg-neutral-900/80 p-6 after:pointer-events-none after:absolute after:inset-0 after:rounded-xl after:inset-shadow-xs after:inset-shadow-white/10 focus-visible:z-1 focus-visible:outline focus-visible:outline-blue-800">
       <div className="grid gap-4">
-        <p className="font-medium text-sm text-white">{testimonial.feedback}</p>
+        <p className="text-sm font-medium text-white">{testimonial.feedback}</p>
         <div className="flex items-center gap-2">
           <div className="aspect-square size-9 overflow-hidden rounded-lg border-2 border-neutral-800/60 object-cover outline outline-neutral-800">
             <Image
@@ -53,7 +53,7 @@ function Testimonial({ testimonial }: { testimonial: Testimonial }) {
             />
           </div>
           <div>
-            <p className="text-neutral-400 text-sm [&_strong]:font-medium [&_strong]:text-white">
+            <p className="text-sm text-neutral-400 [&_strong]:font-medium [&_strong]:text-white">
               <strong className="block">{testimonial.name}</strong>
               {testimonial.position}
             </p>

@@ -31,17 +31,17 @@ function LinkItems({ link }: { link: NonNullable<Public>["links"][number] }) {
   };
 
   return (
-    <li className="relative flex size-full flex-col overflow-hidden rounded-xl bg-stone-900/80 p-4 transition-colors after:pointer-events-none after:absolute after:inset-0 after:inset-shadow-2xs after:inset-shadow-white/5 after:rounded-xl hover:bg-stone-800">
+    <li className="relative flex size-full flex-col overflow-hidden rounded-xl bg-stone-900/80 p-4 transition-colors after:pointer-events-none after:absolute after:inset-0 after:rounded-xl after:inset-shadow-2xs after:inset-shadow-white/5 hover:bg-stone-800">
       <div className="flex w-full items-center justify-between gap-4">
         <div className="flex flex-col gap-1">
           <div className="flex items-center gap-1">
             <p className="text-sm text-white">{link.title}</p>
           </div>
-          <span className="text-stone-400 text-xs">{link.url}</span>
+          <span className="text-xs text-stone-400">{link.url}</span>
         </div>
         <div className="relative">
           <Button
-            className="relative inline-flex aspect-square size-7 shrink cursor-pointer items-center justify-center gap-1 whitespace-nowrap rounded-lg border border-transparent bg-transparent text-stone-400 text-xs transition focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-3.5 [&_svg]:shrink-0"
+            className="relative inline-flex aspect-square size-7 shrink cursor-pointer items-center justify-center gap-1 rounded-lg border border-transparent bg-transparent text-xs whitespace-nowrap text-stone-400 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-3.5 [&_svg]:shrink-0"
             onClick={handleCopy}
           >
             <HugeiconsIcon

@@ -61,7 +61,7 @@ export default function HandleEditForm({
                   className="h-9 rounded border border-stone-200"
                 />
                 {field.state.meta.errors.length > 0 ? (
-                  <p className="text-red-500 text-sm leading-none">
+                  <p className="text-sm leading-none text-red-500">
                     {field.state.meta.errors.map((e) => e?.message).join(", ")}
                   </p>
                 ) : null}

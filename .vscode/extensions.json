@@ -1,7 +1,8 @@
 {
   "recommendations": [
-    "biomejs.biome",
     "EditorConfig.EditorConfig",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
     "Prisma.prisma",
     "bradlc.vscode-tailwindcss"
   ]

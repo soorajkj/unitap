@@ -18,7 +18,7 @@ export default function Layout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning={true}
       className={cn(fonts, "scrollbar-none")}
     >
-      <body className="h-full min-h-screen w-full bg-stone-50 font-normal font-sans text-base text-stone-950 leading-normal tracking-tight antialiased">
+      <body className="h-full min-h-screen w-full bg-stone-50 font-sans text-base leading-normal font-normal tracking-tight text-stone-950 antialiased">
         <ThemeProvider
           enableSystem
           disableTransitionOnChange

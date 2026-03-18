@@ -9,13 +9,13 @@ export default function Pricing() {
         <div className="grid gap-24 py-24">
           <div className="grid place-items-center">
             <div className="w-full max-w-xl space-y-4 text-center">
-              <p className="font-mono text-neutral-300 text-sm uppercase">
+              <p className="font-mono text-sm text-neutral-300 uppercase">
                 <span className="text-neutral-600">[02]</span> Pricing
               </p>
-              <h2 className="text-balance font-display text-4xl text-white sm:text-4xl lg:text-5xl">
+              <h2 className="font-display text-4xl text-balance text-white sm:text-4xl lg:text-5xl">
                 Predictable pricing, design to scale
               </h2>
-              <p className="text-balance text-base text-neutral-400">
+              <p className="text-base text-balance text-neutral-400">
                 Simple, transparent pricing built to grow with you. Start free
                 and upgrade when you’re ready to unlock more power.
               </p>
@@ -26,19 +26,19 @@ export default function Pricing() {
               return (
                 <div
                   key={i.toString()}
-                  className="relative flex flex-col overflow-hidden rounded-2xl bg-neutral-900/80 p-6 text-neutral-400 after:pointer-events-none after:absolute after:inset-0 after:inset-shadow-white/10 after:inset-shadow-xs after:rounded-2xl focus-visible:z-1 focus-visible:outline focus-visible:outline-blue-800"
+                  className="relative flex flex-col overflow-hidden rounded-2xl bg-neutral-900/80 p-6 text-neutral-400 after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:inset-shadow-xs after:inset-shadow-white/10 focus-visible:z-1 focus-visible:outline focus-visible:outline-blue-800"
                 >
-                  <h2 className="font-medium text-base text-neutral-200">
+                  <h2 className="text-base font-medium text-neutral-200">
                     {plan.plan}
                   </h2>
-                  <h3 className="mb-4 font-bold text-4xl text-white">
+                  <h3 className="mb-4 text-4xl font-bold text-white">
                     {plan.price}
-                    <span className="font-normal text-base text-neutral-400">
+                    <span className="text-base font-normal text-neutral-400">
                       {" "}
                       per month
                     </span>
                   </h3>
-                  <p className="mb-3 text-pretty text-neutral-200 text-sm">
+                  <p className="mb-3 text-sm text-pretty text-neutral-200">
                     {plan.description}
                   </p>
                   <div className="mb-4">{plan.button}</div>
@@ -59,7 +59,7 @@ export default function Pricing() {
                   {plan.addons && (
                     <>
                       <div className="relative mb-2 w-full">
-                        <span className="relative w-fit font-medium text-sm">
+                        <span className="relative w-fit text-sm font-medium">
                           Optional <b>add-ons:</b>
                         </span>
                       </div>
@@ -96,7 +96,7 @@ export const PLANS = [
     price: "$0",
     billing: "forever",
     button: (
-      <Button className="relative w-full cursor-pointer overflow-hidden whitespace-nowrap rounded-full border border-transparent bg-neutral-800 px-4 py-3 font-medium text-sm text-white leading-none transition after:pointer-events-none after:absolute after:inset-0 after:inset-shadow-white/10 after:inset-shadow-xs after:rounded-2xl focus:outline-none focus-visible:z-1 focus-visible:outline focus-visible:outline-blue-800 focus-visible:ring-offset-1">
+      <Button className="relative w-full cursor-pointer overflow-hidden rounded-full border border-transparent bg-neutral-800 px-4 py-3 text-sm leading-none font-medium whitespace-nowrap text-white transition after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:inset-shadow-xs after:inset-shadow-white/10 focus:outline-none focus-visible:z-1 focus-visible:ring-offset-1 focus-visible:outline focus-visible:outline-blue-800">
         Get started
       </Button>
     ),
@@ -117,7 +117,7 @@ export const PLANS = [
     price: "$9",
     billing: "per month",
     button: (
-      <Button className="relative w-full cursor-pointer overflow-hidden whitespace-nowrap rounded-full border border-transparent bg-lime-500 px-4 py-3 font-medium text-neutral-950 text-sm leading-none transition after:pointer-events-none after:absolute after:inset-0 after:inset-shadow-white/10 after:inset-shadow-xs after:rounded-2xl focus:outline-none focus-visible:z-1 focus-visible:outline focus-visible:outline-blue-800 focus-visible:ring-offset-1">
+      <Button className="relative w-full cursor-pointer overflow-hidden rounded-full border border-transparent bg-lime-500 px-4 py-3 text-sm leading-none font-medium whitespace-nowrap text-neutral-950 transition after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:inset-shadow-xs after:inset-shadow-white/10 focus:outline-none focus-visible:z-1 focus-visible:ring-offset-1 focus-visible:outline focus-visible:outline-blue-800">
         Upgarde to pro
       </Button>
     ),
@@ -139,7 +139,7 @@ export const PLANS = [
     price: "$19",
     billing: "per month",
     button: (
-      <Button className="relative w-full cursor-pointer overflow-hidden whitespace-nowrap rounded-full border border-transparent bg-white px-4 py-3 font-medium text-neutral-950 text-sm leading-none transition after:pointer-events-none after:absolute after:inset-0 after:inset-shadow-white/10 after:inset-shadow-xs after:rounded-2xl focus:outline-none focus-visible:z-1 focus-visible:outline focus-visible:outline-blue-800 focus-visible:ring-offset-1">
+      <Button className="relative w-full cursor-pointer overflow-hidden rounded-full border border-transparent bg-white px-4 py-3 text-sm leading-none font-medium whitespace-nowrap text-neutral-950 transition after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:inset-shadow-xs after:inset-shadow-white/10 focus:outline-none focus-visible:z-1 focus-visible:ring-offset-1 focus-visible:outline focus-visible:outline-blue-800">
         Get business
       </Button>
     ),

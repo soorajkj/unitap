@@ -43,7 +43,7 @@ export default function Header() {
                 </g>
               </svg>
 
-              <span className="font-display font-semibold text-2xl text-white tracking-normal">
+              <span className="font-display text-2xl font-semibold tracking-normal text-white">
                 Unitap
               </span>
             </Link>
@@ -72,12 +72,12 @@ export default function Header() {
               <Button
                 nativeButton={false}
                 render={<Link href="/auth/signin">Login</Link>}
-                className="relative cursor-pointer overflow-hidden whitespace-nowrap rounded-full border border-transparent bg-neutral-800 px-4 py-3 font-medium text-sm text-white leading-none transition after:pointer-events-none after:absolute after:inset-0 after:inset-shadow-white/10 after:inset-shadow-xs after:rounded-2xl focus:outline-none focus-visible:z-1 focus-visible:outline focus-visible:outline-blue-800 focus-visible:ring-offset-1"
+                className="relative cursor-pointer overflow-hidden rounded-full border border-transparent bg-neutral-800 px-4 py-3 text-sm leading-none font-medium whitespace-nowrap text-white transition after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:inset-shadow-xs after:inset-shadow-white/10 focus:outline-none focus-visible:z-1 focus-visible:ring-offset-1 focus-visible:outline focus-visible:outline-blue-800"
               />
               <Button
                 nativeButton={false}
                 render={<Link href="/auth/signup">Get started</Link>}
-                className="relative cursor-pointer overflow-hidden whitespace-nowrap rounded-full border border-transparent bg-lime-500 px-4 py-2.5 font-medium text-neutral-950 text-sm leading-none transition after:pointer-events-none after:absolute after:inset-0 after:inset-shadow-white/10 after:inset-shadow-xs after:rounded-2xl focus:outline-none focus-visible:z-1 focus-visible:outline focus-visible:outline-blue-800 focus-visible:ring-offset-1"
+                className="relative cursor-pointer overflow-hidden rounded-full border border-transparent bg-lime-500 px-4 py-2.5 text-sm leading-none font-medium whitespace-nowrap text-neutral-950 transition after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:inset-shadow-xs after:inset-shadow-white/10 focus:outline-none focus-visible:z-1 focus-visible:ring-offset-1 focus-visible:outline focus-visible:outline-blue-800"
               />
             </div>
           </div>

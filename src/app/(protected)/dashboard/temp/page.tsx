@@ -26,7 +26,7 @@ export default async function Page() {
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
       <div className="grid gap-1 bg-stone-50">
-        <div className="flex items-center gap-2 p-4 py-2 text-gray-500 text-sm">
+        <div className="flex items-center gap-2 p-4 py-2 text-sm text-gray-500">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width={24}
@@ -45,7 +45,7 @@ export default async function Page() {
           <span className="font-medium text-gray-600">Overview</span>
           <span className="h-1 w-1 rounded-full bg-gray-300" />
           <span>
-            Attio's Visibility trending up by{" "}
+            Attio&apos;s Visibility trending up by{" "}
             <span className="font-semibold text-gray-900">5.2%</span> this month
           </span>
           <div className="ml-auto flex items-center gap-4 text-xs">

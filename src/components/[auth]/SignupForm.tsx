@@ -125,7 +125,7 @@ export default function SignupForm() {
               <Button
                 type="submit"
                 disabled={!canSubmit}
-                className="relative inline-flex w-full shrink-0 cursor-pointer items-center justify-center gap-1 whitespace-nowrap rounded-lg border border-transparent px-3 py-2 font-medium text-sm leading-none transition focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:shrink-0"
+                className="relative inline-flex w-full shrink-0 cursor-pointer items-center justify-center gap-1 rounded-lg border border-transparent px-3 py-2 text-sm leading-none font-medium whitespace-nowrap transition focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:shrink-0"
               >
                 {isSubmitting ? "..." : "Submit"}
               </Button>
