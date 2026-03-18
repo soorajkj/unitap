@@ -156,7 +156,7 @@ export default function Footer() {
                 <li>
                   <Link
                     className="text-sm text-neutral-400 transition hover:underline"
-                    href="/compare"
+                    href="/"
                   >
                     All Comparisons
                   </Link>
@@ -164,7 +164,7 @@ export default function Footer() {
                 <li>
                   <Link
                     className="text-sm text-neutral-400 transition hover:underline"
-                    href="/compare/searchable-vs-semrush"
+                    href="/"
                   >
                     vs Semrush
                   </Link>
@@ -172,7 +172,7 @@ export default function Footer() {
                 <li>
                   <Link
                     className="text-sm text-neutral-400 transition hover:underline"
-                    href="/compare/searchable-vs-ahrefs"
+                    href="/"
                   >
                     vs Ahrefs
                   </Link>
@@ -180,7 +180,7 @@ export default function Footer() {
                 <li>
                   <Link
                     className="text-sm text-neutral-400 transition hover:underline"
-                    href="/compare/searchable-vs-profound"
+                    href="/"
                   >
                     vs Profound
                   </Link>
