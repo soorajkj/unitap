@@ -1,10 +1,20 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import {
-  ThemeProvider as NextThemeProvider,
   type ThemeProviderProps,
+  ThemeProvider as NextThemeProvider,
 } from "next-themes";
+import { useMemo } from "react";
+
+const decideForcedTheme = (path: string) => {
+  if (["/auth/signin", "/auth/signup"].includes(path)) return "light";
+  return undefined;
+};
 
 export default function ThemeProvider({ ...props }: ThemeProviderProps) {
-  return <NextThemeProvider {...props} />;
+  const path = usePathname();
+  const forcedTheme = useMemo(() => decideForcedTheme(path), [path]);
+
+  return <NextThemeProvider forcedTheme={forcedTheme} {...props} />;
 }

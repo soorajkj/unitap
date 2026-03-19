@@ -1,16 +1,14 @@
 "use client";
 
-import { Button } from "@base-ui/react/button";
 import { Field } from "@base-ui/react/field";
-import { Form } from "@base-ui/react/form";
-import { Input } from "@base-ui/react/input";
 import { useForm } from "@tanstack/react-form";
 import { useRouter } from "next/navigation";
-import { Fragment } from "react";
 import { toast } from "sonner";
 import { authClient } from "@/lib/authClient";
 import { signinSchema } from "@/utils/validators/auth";
 import { FieldInfo } from "../FieldInfo";
+import Input from "@/components/core/input";
+import Button from "@/components/core/button";
 
 export default function SigninForm() {
   const router = useRouter();
@@ -43,74 +41,65 @@ export default function SigninForm() {
   });
 
   return (
-    <Form
+    <form
       id="signup"
-      noValidate={false}
+      className="grid w-full grid-cols-1 gap-4"
       onSubmit={(e) => {
         e.preventDefault();
         form.handleSubmit();
       }}
-      className="w-full max-w-sm"
     >
-      <Field.Root className="grid gap-6">
-        <Field.Item className="grid gap-1">
-          <form.Field name="email">
-            {(field) => (
-              <Fragment>
-                <Field.Label htmlFor={field.name} className="text-sm">
-                  Email
-                </Field.Label>
-                <Input
-                  id={field.name}
-                  type="text"
-                  name={field.name}
-                  value={field.state.value}
-                  onBlur={field.handleBlur}
-                  onChange={(e) => field.handleChange(e.target.value)}
-                  className="h-10 rounded-md border border-stone-900"
-                />
-                <FieldInfo field={field} />
-              </Fragment>
-            )}
-          </form.Field>
-        </Field.Item>
-        <Field.Item className="grid gap-1">
-          <form.Field name="password">
-            {(field) => (
-              <Fragment>
-                <Field.Label htmlFor={field.name} className="text-sm">
-                  Password
-                </Field.Label>
-                <Input
-                  id={field.name}
-                  type="password"
-                  name={field.name}
-                  value={field.state.value}
-                  onBlur={field.handleBlur}
-                  onChange={(e) => field.handleChange(e.target.value)}
-                  className="h-10 rounded-md border border-stone-900"
-                />
-                <FieldInfo field={field} />
-              </Fragment>
-            )}
-          </form.Field>
-        </Field.Item>
-        <form.Subscribe
-          selector={(state) => [state.canSubmit, state.isSubmitting]}
-        >
-          {([canSubmit, isSubmitting]) => (
-            <Fragment>
-              <Button
-                type="submit"
-                disabled={!canSubmit}
-                className="relative inline-flex w-full shrink-0 cursor-pointer items-center justify-center gap-1 rounded-lg border border-transparent px-3 py-2 text-sm leading-none font-medium whitespace-nowrap transition focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:shrink-0"
-              >
-                {isSubmitting ? "..." : "Submit"}
-              </Button>
-            </Fragment>
+      <Field.Root className="grid gap-1">
+        <form.Field name="email">
+          {(field) => (
+            <>
+              <Field.Label className="text-sm font-medium">Email</Field.Label>
+              <Input
+                id={field.name}
+                type="text"
+                name={field.name}
+                value={field.state.value}
+                onBlur={field.handleBlur}
+                onChange={(e) => field.handleChange(e.target.value)}
+                placeholder="Enter your email"
+              />
+              <FieldInfo field={field} />
+            </>
           )}
-        </form.Subscribe>
+        </form.Field>
       </Field.Root>
-    </Form>
+      <Field.Root className="grid gap-1">
+        <form.Field name="password">
+          {(field) => (
+            <>
+              <Field.Label className="text-sm font-medium">
+                Password
+              </Field.Label>
+              <Input
+                id={field.name}
+                type="password"
+                name={field.name}
+                value={field.state.value}
+                onBlur={field.handleBlur}
+                onChange={(e) => field.handleChange(e.target.value)}
+                placeholder="••••••••"
+              />
+              <FieldInfo field={field} />
+            </>
+          )}
+        </form.Field>
+      </Field.Root>
+      <form.Subscribe
+        selector={(state) => [state.canSubmit, state.isSubmitting]}
+      >
+        {([canSubmit, isSubmitting]) => (
+          <>
+            <Button type="submit" disabled={!canSubmit || isSubmitting}>
+              Sign in
+            </Button>
+          </>
+        )}
+      </form.Subscribe>
+    </form>
   );
 }
