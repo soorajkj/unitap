@@ -32,7 +32,7 @@ export default function HandlesListView() {
       </div>
 
       <HandlesSortableList />
-      <Button onClick={openCreate} size="sm">
+      <Button onClick={openCreate}>
         <HugeiconsIcon icon={Add01Icon} />
         Add New
       </Button>

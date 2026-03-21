@@ -1,7 +1,7 @@
 "use client";
 
 import { Field } from "@base-ui/react/field";
-import { Input } from "@base-ui/react/input";
+import Input from "@/components/core/input";
 import { useForm } from "@tanstack/react-form";
 import { Fragment, Suspense } from "react";
 import type z from "zod";
@@ -105,7 +105,6 @@ export default function HandleCreateForm({
                   onBlur={field.handleBlur}
                   onChange={(e) => field.handleChange(e.target.value)}
                   autoComplete="off"
-                  className="h-10 rounded-md border border-stone-900"
                 />
                 {field.state.meta.isTouched && !field.state.meta.isValid ? (
                   <p className="text-sm leading-none text-red-500">
@@ -122,7 +121,11 @@ export default function HandleCreateForm({
         >
           {([canSubmit, isSubmitting]) => (
             <Fragment>
-              <Button type="submit" disabled={!canSubmit || isSubmitting}>
+              <Button
+                type="submit"
+                variant="primary"
+                disabled={!canSubmit || isSubmitting}
+              >
                 Submit
               </Button>
             </Fragment>

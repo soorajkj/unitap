@@ -1,20 +1,25 @@
 "use client";
 
 import { Button } from "@base-ui/react/button";
-import { Input } from "@base-ui/react/input";
+import Input from "@/components/core/input";
 import { Popover } from "@base-ui/react/popover";
 import { Copy01Icon, Globe02Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { toast } from "sonner";
 import { useCopyToClipboard } from "usehooks-ts";
 import QRCode from "@/components/[dashboard]/QRCode";
+import { useProfileQuery } from "@/hooks/useProfilesQuery";
 
 export default function Share() {
   const [_, copy] = useCopyToClipboard();
+  const { data: profile } = useProfileQuery();
 
-  const handleCopyLink = async (text: string) => {
+  const username = profile?.username;
+  const url = `${process.env.NEXT_PUBLIC_BASE_URL}/${username}`;
+
+  const handleCopyLink = async () => {
     try {
-      await copy(text);
+      await copy(url);
       toast.success("Link copied to clipboard");
     } catch (error) {
       console.log(error);
@@ -39,13 +44,11 @@ export default function Share() {
               <div className="flex items-center gap-1">
                 <Input
                   readOnly={true}
-                  defaultValue="https://unitapin.vercel.app/jakijemyre"
+                  defaultValue={url}
                   className="file:text-foreground aria-invalid:border-destructive aria-invalid:ring-destructive/20 h-9 w-full min-w-0 truncate rounded-lg border border-neutral-100 bg-transparent px-2.5 py-1 text-base transition-colors outline-none selection:bg-violet-500 selection:text-white file:inline-flex file:h-6 file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-neutral-400 read-only:bg-neutral-50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:bg-neutral-100 disabled:opacity-50 aria-invalid:ring-3 md:text-sm"
                 />
                 <Button
-                  onClick={() =>
-                    handleCopyLink("https://unitapin.vercel.app/jakijemyre")
-                  }
+                  onClick={() => handleCopyLink()}
                   className="relative inline-flex aspect-square h-9 shrink cursor-pointer items-center justify-center gap-3 rounded-lg border border-transparent bg-neutral-800 text-sm whitespace-nowrap text-white transition hover:bg-neutral-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0"
                 >
                   <HugeiconsIcon icon={Copy01Icon} />

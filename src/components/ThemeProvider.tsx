@@ -8,8 +8,8 @@ import {
 import { useMemo } from "react";
 
 const decideForcedTheme = (path: string) => {
-  if (["/auth/signin", "/auth/signup"].includes(path)) return "light";
-  return undefined;
+  if (/^\/$/.test(path)) return undefined;
+  return "light";
 };
 
 export default function ThemeProvider({ ...props }: ThemeProviderProps) {

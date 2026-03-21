@@ -2,6 +2,7 @@
 
 "use client";
 
+import { useProfileQuery } from "@/hooks/useProfilesQuery";
 import { Button } from "@base-ui/react/button";
 import { ArrowDown03Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
@@ -11,7 +12,11 @@ import { renderSVG } from "uqr";
 
 export default function QRCode() {
   const ref = useRef(null);
-  const svg = renderSVG("https://unitapin.vercel.app/jakijemyre");
+  const { data: profile } = useProfileQuery();
+
+  const username = profile?.username;
+  const url = `${process.env.NEXT_PUBLIC_BASE_URL}/${username}`;
+  const svg = renderSVG(url);
 
   const handleDownloadImage = async (type: "png" | "svg" = "png") => {
     if (!ref.current) return;
@@ -19,7 +24,7 @@ export default function QRCode() {
     const data = await fn(ref.current);
     const a = document.createElement("a");
     a.href = data;
-    a.download = `qr.${type}`;
+    a.download = `${username}.${type}`;
     a.click();
   };
 

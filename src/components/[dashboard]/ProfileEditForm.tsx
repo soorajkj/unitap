@@ -1,7 +1,7 @@
 "use client";
 
 import { Field } from "@base-ui/react/field";
-import { Input } from "@base-ui/react/input";
+import Input from "@/components/core/input";
 import { useForm } from "@tanstack/react-form";
 import Button from "@/components/core/button";
 import { useProfileUpdateMutation } from "@/hooks/useProfilesMutation";
@@ -196,6 +196,7 @@ export default function ProfileEditForm({
         {([canSubmit, isDirty, isDefaultValue]) => (
           <Button
             type="submit"
+            variant="primary"
             className="w-full"
             disabled={!canSubmit || !isDirty || isDefaultValue}
           >

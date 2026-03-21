@@ -1,7 +1,7 @@
 "use client";
 
 import { Field } from "@base-ui/react";
-import { Input } from "@base-ui/react/input";
+import Input from "@/components/core/input";
 import { useForm } from "@tanstack/react-form";
 import Button from "@/components/core/button";
 import { useUpdateLinkMutation } from "@/hooks/useLinksMutations";
@@ -46,7 +46,6 @@ export default function EditLinkForm({ link, handleClose }: EditLinkFormProps) {
                 value={field.state.value}
                 onChange={(e) => field.handleChange(e.target.value)}
                 onBlur={field.handleBlur}
-                className="h-9 rounded border border-stone-200"
               />
               {field.state.meta.errors.length > 0 ? (
                 <p className="text-sm leading-none text-red-500">
@@ -68,7 +67,6 @@ export default function EditLinkForm({ link, handleClose }: EditLinkFormProps) {
                 value={field.state.value}
                 onChange={(e) => field.handleChange(e.target.value)}
                 onBlur={field.handleBlur}
-                className="h-9 rounded border border-stone-200"
               />
               {field.state.meta.errors.length > 0 ? (
                 <p className="text-sm leading-none text-red-500">
@@ -90,6 +88,7 @@ export default function EditLinkForm({ link, handleClose }: EditLinkFormProps) {
         {([canSubmit, isDirty, isDefaultValue]) => (
           <Button
             type="submit"
+            variant="primary"
             className="w-full"
             disabled={!canSubmit || !isDirty || isDefaultValue}
           >

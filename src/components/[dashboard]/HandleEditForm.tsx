@@ -1,7 +1,7 @@
 "use client";
 
 import { Field } from "@base-ui/react/field";
-import { Input } from "@base-ui/react/input";
+import Input from "@/components/core/input";
 import { Delete01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { useForm } from "@tanstack/react-form";
@@ -58,7 +58,6 @@ export default function HandleEditForm({
                   value={field.state.value}
                   onChange={(e) => field.handleChange(e.target.value)}
                   onBlur={field.handleBlur}
-                  className="h-9 rounded border border-stone-200"
                 />
                 {field.state.meta.errors.length > 0 ? (
                   <p className="text-sm leading-none text-red-500">
@@ -80,6 +79,7 @@ export default function HandleEditForm({
           {([canSubmit, isDirty, isDefaultValue]) => (
             <Button
               type="submit"
+              variant="primary"
               className="w-full"
               disabled={!canSubmit || !isDirty || isDefaultValue}
             >

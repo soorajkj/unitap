@@ -1,7 +1,7 @@
 "use client";
 
 import { Field } from "@base-ui/react";
-import { Input } from "@base-ui/react/input";
+import Input from "@/components/core/input";
 import { useForm } from "@tanstack/react-form";
 import Button from "@/components/core/button";
 import { useLinksCreateMutation } from "@/hooks/useLinksMutations";
@@ -43,7 +43,6 @@ export default function CreateLinkForm({ handleClose }: CreateLinkFormProps) {
                 value={field.state.value}
                 onChange={(e) => field.handleChange(e.target.value)}
                 onBlur={field.handleBlur}
-                className="h-9 rounded border border-stone-200"
               />
               {field.state.meta.isTouched && !field.state.meta.isValid ? (
                 <p className="text-sm leading-none text-red-500">
@@ -65,7 +64,6 @@ export default function CreateLinkForm({ handleClose }: CreateLinkFormProps) {
                 value={field.state.value}
                 onChange={(e) => field.handleChange(e.target.value)}
                 onBlur={field.handleBlur}
-                className="h-9 rounded border border-stone-200"
               />
               {field.state.meta.isTouched && !field.state.meta.isValid ? (
                 <p className="text-sm leading-none text-red-500">
@@ -81,7 +79,11 @@ export default function CreateLinkForm({ handleClose }: CreateLinkFormProps) {
         selector={(state) => [state.canSubmit, state.isSubmitting]}
       >
         {([canSubmit, isSubmitting]) => (
-          <Button type="submit" disabled={!canSubmit || isSubmitting}>
+          <Button
+            type="submit"
+            variant="primary"
+            disabled={!canSubmit || isSubmitting}
+          >
             Submit
           </Button>
         )}
