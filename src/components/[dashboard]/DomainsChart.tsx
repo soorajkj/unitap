@@ -29,12 +29,12 @@ export function DomainsChart() {
     <div className="flex h-full flex-col bg-white p-6">
       <div className="mb-2 flex items-center justify-between">
         <div>
-          <h3 className="font-semibold text-gray-900">Domains by Type</h3>
-          <p className="mt-1 text-sm text-gray-500">
+          <h3 className="font-semibold text-neutral-900">Domains by Type</h3>
+          <p className="mt-1 text-sm text-neutral-500">
             Most used domains categorized by type
           </p>
         </div>
-        <Button className="rounded-lg p-2 text-gray-400 hover:bg-gray-50">
+        <Button className="rounded-lg p-2 text-neutral-400 hover:bg-neutral-50">
           <MoveUpRight className="h-4 w-4" />
         </Button>
       </div>
@@ -64,7 +64,7 @@ export function DomainsChart() {
           </ResponsiveContainer>
           {/* Center Text */}
           <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center">
-            <span className="text-2xl font-bold text-gray-900">12%</span>
+            <span className="text-2xl font-bold text-neutral-900">12%</span>
             <span className="text-xs font-semibold tracking-wide text-blue-600 uppercase">
               UGC
             </span>
@@ -84,7 +84,7 @@ export function DomainsChart() {
                   "text-xs font-medium",
                   item.name === "Competitor"
                     ? "text-pink-700"
-                    : "text-gray-600",
+                    : "text-neutral-600",
                 )}
               >
                 {item.name}

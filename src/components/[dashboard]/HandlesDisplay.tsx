@@ -23,7 +23,7 @@ export default function HandlesDisplay() {
             <Button
               key={platform.id}
               onClick={() => openCreate()}
-              className="relative inline-flex aspect-square size-7 shrink cursor-pointer items-center justify-center gap-1 rounded-full border border-dashed border-neutral-300 bg-neutral-50 text-sm whitespace-nowrap text-neutral-400 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0"
+              className="relative inline-flex aspect-square size-7 shrink cursor-pointer items-center justify-center gap-1 rounded-full border border-dashed border-neutral-300 bg-neutral-50 text-sm whitespace-nowrap text-neutral-400 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0"
             >
               <HugeiconsIcon icon={PLATFORM_ICONS[icon]} strokeWidth={2} />
             </Button>
@@ -41,7 +41,7 @@ export default function HandlesDisplay() {
           <Button
             key={handle.id}
             onClick={() => openEdit(handle.id)}
-            className="relative inline-flex aspect-square size-7 shrink cursor-pointer items-center justify-center gap-1 rounded-lg border border-transparent bg-transparent text-sm whitespace-nowrap text-stone-500 transition hover:bg-stone-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-6 [&_svg]:shrink-0"
+            className="relative inline-flex aspect-square size-7 shrink cursor-pointer items-center justify-center gap-1 rounded-lg border border-transparent bg-transparent text-sm whitespace-nowrap text-neutral-500 transition hover:bg-neutral-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-6 [&_svg]:shrink-0"
           >
             <HugeiconsIcon icon={PLATFORM_ICONS[icon]} strokeWidth={2} />
           </Button>

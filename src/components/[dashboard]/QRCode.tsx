@@ -46,7 +46,7 @@ export default function QRCode() {
       <div className="grid gap-px">
         <Button
           onClick={() => handleDownloadImage("png")}
-          className="relative inline-flex shrink cursor-pointer items-center gap-3 rounded-lg border border-transparent bg-white p-4 text-sm whitespace-nowrap text-neutral-950 transition hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-3.5 [&_svg]:shrink-0"
+          className="relative inline-flex shrink cursor-pointer items-center gap-3 rounded-lg border border-transparent bg-white p-4 text-sm whitespace-nowrap text-neutral-950 transition hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-3.5 [&_svg]:shrink-0"
         >
           <div className="flex grow flex-col items-start">
             <p className="font-medium">Download PNG</p>
@@ -59,7 +59,7 @@ export default function QRCode() {
         </Button>
         <Button
           onClick={() => handleDownloadImage("svg")}
-          className="relative inline-flex shrink cursor-pointer items-center gap-3 rounded-lg border border-transparent bg-white p-4 text-sm whitespace-nowrap text-neutral-950 transition hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-3.5 [&_svg]:shrink-0"
+          className="relative inline-flex shrink cursor-pointer items-center gap-3 rounded-lg border border-transparent bg-white p-4 text-sm whitespace-nowrap text-neutral-950 transition hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-3.5 [&_svg]:shrink-0"
         >
           <div className="flex grow flex-col items-start">
             <p className="font-medium">Download SVG</p>

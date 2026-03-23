@@ -29,7 +29,7 @@ const buttonStyles = tv({
     variant: {
       primary:
         "bg-violet-600 text-white ring-violet-500 outline-violet-500 hover:bg-violet-700 dark:bg-violet-500 dark:hover:bg-violet-500",
-      secondary: "bg-transparent text-stone-600 hover:bg-stone-100",
+      secondary: "bg-transparent text-neutral-600 hover:bg-neutral-100",
       destructive: "bg-red-600 text-white hover:bg-red-500",
     },
     size: {

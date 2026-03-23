@@ -55,19 +55,19 @@ const domains = [
 export function DomainsTable() {
   return (
     <div className="flex h-full flex-col bg-white p-6">
-      <div className="mb-6 flex items-center gap-4 border-b border-gray-100 pb-1 text-sm font-medium">
-        <Button className="border-b-2 border-gray-900 px-1 pb-3 text-gray-900">
+      <div className="mb-6 flex items-center gap-4 border-b border-neutral-100 pb-1 text-sm font-medium">
+        <Button className="border-b-2 border-neutral-900 px-1 pb-3 text-neutral-900">
           Domains
         </Button>
-        <Button className="px-1 pb-3 text-gray-400 transition-colors hover:text-gray-600">
+        <Button className="px-1 pb-3 text-neutral-400 transition-colors hover:text-neutral-600">
           URLs
         </Button>
       </div>
 
       <div className="overflow-x-auto">
-        <table className="w-full border border-stone-100">
+        <table className="w-full border border-neutral-100">
           <thead>
-            <tr className="border-b border-gray-100 text-left text-xs font-medium text-gray-400 [&_th]:border-r [&_th]:border-stone-100">
+            <tr className="border-b border-neutral-100 text-left text-xs font-medium text-neutral-400 [&_th]:border-r [&_th]:border-neutral-100">
               <th className="w-8 p-2 font-normal">#</th>
               <th className="p-2 font-normal">Domain</th>
               <th className="p-2 font-normal">Type</th>
@@ -79,9 +79,9 @@ export function DomainsTable() {
             {domains.map((item) => (
               <tr
                 key={item.id}
-                className="border-b border-gray-50 transition-colors last:border-0 hover:bg-gray-50/50 [&_td]:border-r [&_td]:border-stone-100"
+                className="border-b border-neutral-50 transition-colors last:border-0 hover:bg-neutral-50/50 [&_td]:border-r [&_td]:border-neutral-100"
               >
-                <td className="p-2 font-mono text-xs text-gray-400">
+                <td className="p-2 font-mono text-xs text-neutral-400">
                   {item.id}
                 </td>
                 <td className="p-2">
@@ -93,7 +93,7 @@ export function DomainsTable() {
                       height={20}
                       className="h-5 w-5 rounded-full"
                     />
-                    <span className="font-medium text-gray-900">
+                    <span className="font-medium text-neutral-900">
                       {item.domain}
                     </span>
                   </div>
@@ -108,8 +108,10 @@ export function DomainsTable() {
                     {item.type}
                   </span>
                 </td>
-                <td className="p-2 font-medium text-gray-700">{item.used}</td>
-                <td className="p-2 font-medium text-gray-700">
+                <td className="p-2 font-medium text-neutral-700">
+                  {item.used}
+                </td>
+                <td className="p-2 font-medium text-neutral-700">
                   {item.citations}
                 </td>
               </tr>

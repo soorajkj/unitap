@@ -51,10 +51,10 @@ export default function LinkControl({ link }: LinkControlProps) {
           <div className="flex w-full gap-4 rounded-xl p-3">
             <div className="flex w-full flex-col gap-2">
               <div className="flex flex-1 flex-col gap-1">
-                <p className="text-sm font-medium text-stone-950">
+                <p className="text-sm font-medium text-neutral-950">
                   {link.title}
                 </p>
-                <p className="text-xs underline decoration-stone-300 underline-offset-2">
+                <p className="text-xs underline decoration-neutral-300 underline-offset-2">
                   {link.url}
                 </p>
               </div>
@@ -86,7 +86,7 @@ export default function LinkControl({ link }: LinkControlProps) {
                       />
                       <Tooltip.Portal>
                         <Tooltip.Positioner side="bottom" sideOffset={4}>
-                          <Tooltip.Popup className="rounded-md bg-stone-950 px-1.5 py-1 text-xs font-medium text-white">
+                          <Tooltip.Popup className="rounded-md bg-neutral-950 px-1.5 py-1 text-xs font-medium text-white">
                             <Tooltip.Arrow />
                             Favourite
                           </Tooltip.Popup>
@@ -113,7 +113,7 @@ export default function LinkControl({ link }: LinkControlProps) {
                       />
                       <Tooltip.Portal>
                         <Tooltip.Positioner side="bottom" sideOffset={4}>
-                          <Tooltip.Popup className="rounded-md bg-stone-950 px-1.5 py-1 text-xs font-medium text-white">
+                          <Tooltip.Popup className="rounded-md bg-neutral-950 px-1.5 py-1 text-xs font-medium text-white">
                             <Tooltip.Arrow />
                             Archive
                           </Tooltip.Popup>
@@ -132,7 +132,7 @@ export default function LinkControl({ link }: LinkControlProps) {
                       />
                       <Tooltip.Portal>
                         <Tooltip.Positioner side="bottom" sideOffset={4}>
-                          <Tooltip.Popup className="rounded-md bg-stone-950 px-1.5 py-1 text-xs font-medium text-white">
+                          <Tooltip.Popup className="rounded-md bg-neutral-950 px-1.5 py-1 text-xs font-medium text-white">
                             <Tooltip.Arrow />
                             Analytics
                           </Tooltip.Popup>
@@ -157,7 +157,7 @@ export default function LinkControl({ link }: LinkControlProps) {
                     />
                     <Tooltip.Portal>
                       <Tooltip.Positioner side="bottom" sideOffset={4}>
-                        <Tooltip.Popup className="rounded-md bg-stone-950 px-1.5 py-1 text-xs font-medium text-white">
+                        <Tooltip.Popup className="rounded-md bg-neutral-950 px-1.5 py-1 text-xs font-medium text-white">
                           <Tooltip.Arrow />
                           Delete
                         </Tooltip.Popup>
@@ -177,8 +177,8 @@ export default function LinkControl({ link }: LinkControlProps) {
               exit={{ height: 0 }}
               className="overflow-hidden"
             >
-              <div className="flex items-center justify-center bg-stone-300/40 py-1">
-                <p className="text-sm font-medium text-stone-950">Delete</p>
+              <div className="flex items-center justify-center bg-neutral-300/40 py-1">
+                <p className="text-sm font-medium text-neutral-950">Delete</p>
               </div>
               <div className="flex items-center justify-between p-3">
                 <p className="mr-4 text-xs text-red-600">

@@ -25,8 +25,8 @@ export default async function Page() {
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <div className="grid gap-1 bg-stone-50">
-        <div className="flex items-center gap-2 p-4 py-2 text-sm text-gray-500">
+      <div className="grid gap-1 bg-neutral-50">
+        <div className="flex items-center gap-2 p-4 py-2 text-sm text-neutral-500">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width={24}
@@ -42,31 +42,32 @@ export default async function Page() {
           >
             <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
           </svg>
-          <span className="font-medium text-gray-600">Overview</span>
-          <span className="h-1 w-1 rounded-full bg-gray-300" />
+          <span className="font-medium text-neutral-600">Overview</span>
+          <span className="h-1 w-1 rounded-full bg-neutral-300" />
           <span>
             Attio&apos;s Visibility trending up by{" "}
-            <span className="font-semibold text-gray-900">5.2%</span> this month
+            <span className="font-semibold text-neutral-900">5.2%</span> this
+            month
           </span>
           <div className="ml-auto flex items-center gap-4 text-xs">
             <span>
               Visibility:{" "}
-              <span className="font-semibold text-gray-900">3/14</span>{" "}
+              <span className="font-semibold text-neutral-900">3/14</span>{" "}
               <span className="text-red-500">▼</span>
             </span>
             <span>
               Sentiment:{" "}
-              <span className="font-semibold text-gray-900">2/14</span>{" "}
+              <span className="font-semibold text-neutral-900">2/14</span>{" "}
               <span className="text-green-500">▲</span>
             </span>
             <span>
               Position:{" "}
-              <span className="font-semibold text-gray-900">5/14</span>{" "}
+              <span className="font-semibold text-neutral-900">5/14</span>{" "}
               <span className="text-green-500">▲</span>
             </span>
           </div>
         </div>
-        <div className="grid grid-cols-12 gap-px overflow-hidden rounded-xl border border-stone-200 bg-stone-200">
+        <div className="grid grid-cols-12 gap-px overflow-hidden rounded-xl border border-neutral-200 bg-neutral-200">
           <div className="h-full lg:col-span-7">
             <VisibilityChart />
           </div>
@@ -74,7 +75,7 @@ export default async function Page() {
             <CompetitorsTable />
           </div>
         </div>
-        <div className="grid grid-cols-12 gap-px overflow-hidden rounded-xl border border-stone-200 bg-stone-200">
+        <div className="grid grid-cols-12 gap-px overflow-hidden rounded-xl border border-neutral-200 bg-neutral-200">
           <div className="h-full lg:col-span-7">
             <DomainsTable />
           </div>

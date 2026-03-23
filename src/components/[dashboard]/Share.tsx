@@ -29,7 +29,7 @@ export default function Share() {
 
   return (
     <Popover.Root>
-      <Popover.Trigger className="relative inline-flex h-9 shrink cursor-pointer items-center justify-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 text-sm whitespace-nowrap text-neutral-900 transition hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-3.5 [&_svg]:shrink-0">
+      <Popover.Trigger className="relative inline-flex h-9 shrink cursor-pointer items-center justify-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 text-sm whitespace-nowrap text-neutral-900 transition hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-3.5 [&_svg]:shrink-0">
         <span className="inline-block w-full max-w-60 truncate">Share</span>
         <HugeiconsIcon icon={Globe02Icon} />
       </Popover.Trigger>
@@ -49,7 +49,7 @@ export default function Share() {
                 />
                 <Button
                   onClick={() => handleCopyLink()}
-                  className="relative inline-flex aspect-square h-9 shrink cursor-pointer items-center justify-center gap-3 rounded-lg border border-transparent bg-neutral-800 text-sm whitespace-nowrap text-white transition hover:bg-neutral-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0"
+                  className="relative inline-flex aspect-square h-9 shrink cursor-pointer items-center justify-center gap-3 rounded-lg border border-transparent bg-neutral-800 text-sm whitespace-nowrap text-white transition hover:bg-neutral-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0"
                 >
                   <HugeiconsIcon icon={Copy01Icon} />
                 </Button>

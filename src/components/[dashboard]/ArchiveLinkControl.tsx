@@ -38,8 +38,8 @@ export default function ArchiveLinkControl({ link }: ArchiveLinkControlProps) {
     >
       <div className="flex w-full gap-4 p-4">
         <div className="flex flex-1 flex-col gap-1">
-          <p className="text-sm font-medium text-stone-950">{link.title}</p>
-          <p className="text-xs underline decoration-stone-300 underline-offset-2">
+          <p className="text-sm font-medium text-neutral-950">{link.title}</p>
+          <p className="text-xs underline decoration-neutral-300 underline-offset-2">
             {link.url}
           </p>
         </div>
@@ -61,7 +61,7 @@ export default function ArchiveLinkControl({ link }: ArchiveLinkControlProps) {
               onClick={() => handleTabChange("delete")}
             />
           </Tooltip.Provider>
-          <Tabs.Indicator className="absolute top-1/2 left-0 h-6 w-(--active-tab-width) translate-x-(--active-tab-left) -translate-y-1/2 rounded-sm bg-gray-100 transition-all duration-200 ease-in-out" />
+          <Tabs.Indicator className="absolute top-1/2 left-0 h-6 w-(--active-tab-width) translate-x-(--active-tab-left) -translate-y-1/2 rounded-sm bg-neutral-100 transition-all duration-200 ease-in-out" />
         </Tabs.List>
       </div>
 
@@ -74,21 +74,23 @@ export default function ArchiveLinkControl({ link }: ArchiveLinkControlProps) {
             className="overflow-hidden"
           >
             <Tabs.Panel value="analytics" keepMounted={true}>
-              <div className="flex items-center justify-between bg-stone-50 p-4">
-                <p className="text-xs text-stone-600">
+              <div className="flex items-center justify-between bg-neutral-50 p-4">
+                <p className="text-xs text-neutral-600">
                   Analytics coming soon...
                 </p>
-                <p className="text-sm font-medium text-stone-950">0 Clicks</p>
+                <p className="text-sm font-medium text-neutral-950">0 Clicks</p>
               </div>
             </Tabs.Panel>
 
             <Tabs.Panel value="unarchive" keepMounted={true}>
-              <div className="flex flex-col bg-stone-50">
-                <div className="flex items-center justify-center bg-stone-300/40 py-1">
-                  <p className="text-sm font-medium text-stone-950">Restore</p>
+              <div className="flex flex-col bg-neutral-50">
+                <div className="flex items-center justify-center bg-neutral-300/40 py-1">
+                  <p className="text-sm font-medium text-neutral-950">
+                    Restore
+                  </p>
                 </div>
                 <div className="flex items-center justify-between p-4">
-                  <p className="text-xs text-stone-600">Restore this link?</p>
+                  <p className="text-xs text-neutral-600">Restore this link?</p>
                   <div className="flex gap-2">
                     <Button
                       size="sm"
@@ -116,8 +118,8 @@ export default function ArchiveLinkControl({ link }: ArchiveLinkControlProps) {
 
             <Tabs.Panel value="delete" keepMounted={true}>
               <div className="flex flex-col">
-                <div className="flex items-center justify-center bg-stone-300/40 py-1">
-                  <p className="text-sm font-medium text-stone-950">Delete</p>
+                <div className="flex items-center justify-center bg-neutral-300/40 py-1">
+                  <p className="text-sm font-medium text-neutral-950">Delete</p>
                 </div>
                 <div className="flex items-center justify-between p-4">
                   <p className="text-xs text-red-600">Delete forever?</p>
@@ -168,7 +170,7 @@ function TabTrigger({
       />
       <Tooltip.Portal>
         <Tooltip.Positioner side="bottom" sideOffset={4}>
-          <Tooltip.Popup className="rounded-md bg-stone-950 px-1.5 py-1 text-xs font-medium text-white">
+          <Tooltip.Popup className="rounded-md bg-neutral-950 px-1.5 py-1 text-xs font-medium text-white">
             <Tooltip.Arrow />
             {label}
           </Tooltip.Popup>

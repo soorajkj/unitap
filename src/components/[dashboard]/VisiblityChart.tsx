@@ -66,15 +66,15 @@ export function VisibilityChart() {
     <div className="flex h-full flex-col bg-white p-6">
       <div className="mb-2 flex items-center justify-between">
         <div>
-          <h3 className="font-semibold text-gray-900">Domains by Type</h3>
-          <p className="mt-1 text-sm text-gray-500">
+          <h3 className="font-semibold text-neutral-900">Domains by Type</h3>
+          <p className="mt-1 text-sm text-neutral-500">
             Most used domains categorized by type
           </p>
         </div>
         <button
           type="button"
           tabIndex={0}
-          className="rounded-lg p-2 text-gray-400 hover:bg-gray-50"
+          className="rounded-lg p-2 text-neutral-400 hover:bg-neutral-50"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

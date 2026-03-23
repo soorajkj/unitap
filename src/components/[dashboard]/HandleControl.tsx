@@ -30,7 +30,7 @@ export default function HandleControl({ handle }: HandleControlProps) {
           <HugeiconsIcon icon={DragDropVerticalIcon} />
         </Button>
         <div className="flex w-full gap-2">
-          <div className="flex flex-1 items-center gap-2 overflow-hidden rounded-xl p-2.5 hover:bg-stone-200/50">
+          <div className="flex flex-1 items-center gap-2 overflow-hidden rounded-xl p-2.5 hover:bg-neutral-200/50">
             <div className="flex size-6 items-center justify-center">
               <div className="rounded-md [&_svg]:size-5">
                 <HugeiconsIcon icon={PLATFORM_ICONS[icon]} strokeWidth={2} />

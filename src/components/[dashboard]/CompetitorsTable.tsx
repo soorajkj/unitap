@@ -84,22 +84,22 @@ export function CompetitorsTable() {
     <div className="flex h-full flex-col bg-white p-6">
       <div className="mb-4 flex items-center justify-between">
         <div>
-          <h3 className="font-semibold text-gray-900">
+          <h3 className="font-semibold text-neutral-900">
             Attio&apos;s competitors
           </h3>
-          <p className="mt-1 text-sm text-gray-500">
+          <p className="mt-1 text-sm text-neutral-500">
             Compare Attio with it&apos;s competitors
           </p>
         </div>
-        <Button className="rounded-lg p-2 text-gray-400 hover:bg-gray-50">
+        <Button className="rounded-lg p-2 text-neutral-400 hover:bg-neutral-50">
           <MoveUpRight className="h-4 w-4" />
         </Button>
       </div>
 
       <div className="overflow-x-auto">
-        <table className="w-full border border-stone-100">
+        <table className="w-full border border-neutral-100">
           <thead>
-            <tr className="border-b border-gray-100 text-left text-xs font-medium text-gray-400 [&_th]:border-r [&_th]:border-stone-100">
+            <tr className="border-b border-neutral-100 text-left text-xs font-medium text-neutral-400 [&_th]:border-r [&_th]:border-neutral-100">
               <th className="w-8 p-2 font-normal">#</th>
               <th className="p-2 font-normal">Brand</th>
               <th className="p-2 font-normal">Visibility</th>
@@ -111,9 +111,9 @@ export function CompetitorsTable() {
             {competitors.map((item) => (
               <tr
                 key={item.id}
-                className="border-b border-gray-50 transition-colors last:border-0 hover:bg-gray-50/50 [&_td]:border-r [&_td]:border-stone-100"
+                className="border-b border-neutral-50 transition-colors last:border-0 hover:bg-neutral-50/50 [&_td]:border-r [&_td]:border-neutral-100"
               >
-                <td className="p-2 font-mono text-xs text-gray-400">
+                <td className="p-2 font-mono text-xs text-neutral-400">
                   {item.id}
                 </td>
                 <td className="p-2">
@@ -126,14 +126,14 @@ export function CompetitorsTable() {
                     >
                       {item.logo}
                     </div>
-                    <span className="font-medium text-gray-900">
+                    <span className="font-medium text-neutral-900">
                       {item.name}
                     </span>
                   </div>
                 </td>
                 <td className="p-2">
                   <div className="flex items-center">
-                    <span className="font-medium text-gray-600">
+                    <span className="font-medium text-neutral-600">
                       {item.visibility}
                     </span>
                     <Trend value={item.visTrend} />
@@ -143,7 +143,7 @@ export function CompetitorsTable() {
                   <div className="flex items-center">
                     <span
                       className={cn(
-                        "rounded border border-gray-200 bg-gray-100 px-1.5 py-0.5 text-xs font-medium text-gray-700",
+                        "rounded border border-neutral-200 bg-neutral-100 px-1.5 py-0.5 text-xs font-medium text-neutral-700",
                       )}
                     >
                       {item.sentiment}
@@ -155,7 +155,7 @@ export function CompetitorsTable() {
                   <div className="flex items-center">
                     <span
                       className={cn(
-                        "rounded border border-gray-200 bg-gray-100 px-1.5 py-0.5 text-xs font-medium text-gray-700",
+                        "rounded border border-neutral-200 bg-neutral-100 px-1.5 py-0.5 text-xs font-medium text-neutral-700",
                       )}
                     >
                       #{item.position}
