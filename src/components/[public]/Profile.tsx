@@ -15,7 +15,7 @@ export default function Profile({ username }: { username: string }) {
 
   return (
     <div className="flex size-full max-w-md flex-1 flex-col gap-8">
-      <PermaLink />
+      <PermaLink data={data} />
       <Handles data={data} />
       <Links data={data} />
       <Chat />
