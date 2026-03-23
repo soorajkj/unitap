@@ -25,7 +25,7 @@ export default async function Page() {
   ]);
 
   return (
-    <div className="mx-auto flex w-full max-w-lg flex-col gap-8 py-12">
+    <div className="mx-auto flex w-full max-w-lg flex-col gap-8">
       <HydrationBoundary state={dehydrate(queryClient)}>
         <ProfileEditor />
         <CreateLink />

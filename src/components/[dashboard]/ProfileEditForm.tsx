@@ -58,7 +58,6 @@ export default function ProfileEditForm({
                 value={field.state.value}
                 onChange={(e) => field.handleChange(e.target.value)}
                 onBlur={field.handleBlur}
-                className="h-9 rounded border border-stone-200"
               />
               {(field.state.meta.isTouched || field.state.meta.isDirty) &&
               field.state.meta.errors.length ? (
@@ -81,7 +80,6 @@ export default function ProfileEditForm({
                 value={field.state.value}
                 onChange={(e) => field.handleChange(e.target.value)}
                 onBlur={field.handleBlur}
-                className="h-9 rounded border border-stone-200"
               />
               {(field.state.meta.isTouched || field.state.meta.isDirty) &&
               field.state.meta.errors.length ? (
@@ -105,7 +103,6 @@ export default function ProfileEditForm({
                 value={field.state.value}
                 onChange={(e) => field.handleChange(e.target.value)}
                 onBlur={field.handleBlur}
-                className="min-h-20 rounded border border-stone-200"
                 multiple
               />
               {(field.state.meta.isTouched || field.state.meta.isDirty) &&
@@ -129,7 +126,6 @@ export default function ProfileEditForm({
                 value={field.state.value}
                 onChange={(e) => field.handleChange(e.target.value)}
                 onBlur={field.handleBlur}
-                className="h-9 rounded border border-stone-200"
               />
               {(field.state.meta.isTouched || field.state.meta.isDirty) &&
               field.state.meta.errors.length ? (
@@ -152,7 +148,6 @@ export default function ProfileEditForm({
                 value={field.state.value}
                 onChange={(e) => field.handleChange(e.target.value)}
                 onBlur={field.handleBlur}
-                className="h-9 rounded border border-stone-200"
               />
               {field.state.meta.isTouched && !field.state.meta.isValid ? (
                 <p className="text-sm leading-none text-red-500">
@@ -174,7 +169,6 @@ export default function ProfileEditForm({
                 value={field.state.value}
                 onChange={(e) => field.handleChange(e.target.value)}
                 onBlur={field.handleBlur}
-                className="h-9 rounded border border-stone-200"
               />
               {field.state.meta.isTouched && !field.state.meta.isValid ? (
                 <p className="text-sm leading-none text-red-500">
