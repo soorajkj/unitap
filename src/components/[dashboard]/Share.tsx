@@ -6,7 +6,7 @@ import { Popover } from "@base-ui/react/popover";
 import { Copy01Icon, Globe02Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { toast } from "sonner";
-import { useCopyToClipboard } from "usehooks-ts";
+import { useCopyToClipboard } from "@/hooks/useCopyToClipboard";
 import QRCode from "@/components/[dashboard]/QRCode";
 import { useProfileQuery } from "@/hooks/useProfilesQuery";
 

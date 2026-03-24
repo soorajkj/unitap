@@ -1,3 +1,4 @@
+import { useCopyToClipboard } from "@/hooks/useCopyToClipboard";
 import { Profile } from "@/types/response";
 import { Button } from "@base-ui/react";
 import {
@@ -8,7 +9,6 @@ import {
 } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { toast } from "sonner";
-import { useCopyToClipboard } from "usehooks-ts";
 
 export default function UtilsGroup({ data }: { data: Profile }) {
   const [copiedText, copy] = useCopyToClipboard();

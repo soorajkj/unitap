@@ -2,7 +2,7 @@ import { Button } from "@base-ui/react/button";
 import { CheckmarkSquare02Icon, Copy01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { toast } from "sonner";
-import { useCopyToClipboard } from "usehooks-ts";
+import { useCopyToClipboard } from "@/hooks/useCopyToClipboard";
 import type { Public } from "@/types/response";
 
 export default function Links({ data }: { data: Public }) {
