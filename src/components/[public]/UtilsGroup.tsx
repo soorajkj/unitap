@@ -28,7 +28,10 @@ export default function UtilsGroup({ data }: { data: Profile }) {
 
   return (
     <div className="flex w-full items-center gap-2">
-      <Button className="relative inline-flex aspect-square size-10 shrink cursor-pointer items-center justify-center gap-1 rounded-lg border border-transparent bg-white text-base leading-none whitespace-nowrap text-neutral-950 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0">
+      <Button
+        aria-label="Notifications"
+        className="relative inline-flex aspect-square size-10 shrink cursor-pointer items-center justify-center gap-1 rounded-lg border border-transparent bg-white text-base leading-none whitespace-nowrap text-neutral-950 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0"
+      >
         <HugeiconsIcon icon={NotificationBubbleIcon} strokeWidth={2} />
       </Button>
       <Button
@@ -41,7 +44,10 @@ export default function UtilsGroup({ data }: { data: Profile }) {
           strokeWidth={2}
         />
       </Button>
-      <Button className="relative inline-flex aspect-square size-10 shrink cursor-pointer items-center justify-center gap-1 rounded-lg border border-transparent bg-white text-base leading-none whitespace-nowrap text-neutral-950 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0">
+      <Button
+        aria-label="Share"
+        className="relative inline-flex aspect-square size-10 shrink cursor-pointer items-center justify-center gap-1 rounded-lg border border-transparent bg-white text-base leading-none whitespace-nowrap text-neutral-950 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0"
+      >
         <HugeiconsIcon icon={Share08Icon} strokeWidth={2} />
       </Button>
     </div>

@@ -29,12 +29,12 @@ export default function Profile({ username }: { username: string }) {
   if (!data) return notFound();
 
   return (
-    <div className="flex size-full max-w-md flex-1 flex-col gap-8">
+    <main className="flex size-full max-w-md flex-1 flex-col gap-8">
       <PermaLink data={data} />
       <Handles data={data} />
       <Links data={data} />
       <Chat />
       <Watermark />
-    </div>
+    </main>
   );
 }

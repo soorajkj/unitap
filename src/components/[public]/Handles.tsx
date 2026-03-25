@@ -14,6 +14,7 @@ export default function Handles({ data }: { data: Public }) {
           <li key={handle.id} className="relative aspect-square size-12">
             <Link
               href="/"
+              aria-label={handle.platform.name}
               className="relative flex size-full flex-col items-center justify-center overflow-hidden"
             >
               <div className="relative flex size-6 items-center justify-center">

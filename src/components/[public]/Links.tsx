@@ -41,6 +41,7 @@ function LinkItems({ link }: { link: NonNullable<Public>["links"][number] }) {
         </div>
         <div className="relative">
           <Button
+            aria-label="Copy link"
             className="relative inline-flex aspect-square size-7 shrink cursor-pointer items-center justify-center gap-1 rounded-lg border border-transparent bg-transparent text-xs whitespace-nowrap text-neutral-400 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-3.5 [&_svg]:shrink-0"
             onClick={handleCopy}
           >
