@@ -15,21 +15,15 @@ export default function Profile({ username }: { username: string }) {
   const queryClient = useQueryClient();
 
   useEffect(() => {
-    console.log("[Profile Tab] Initializing BroadcastChannel: profile-sync");
     const channel = new BroadcastChannel("profile-sync");
 
     channel.onmessage = (event) => {
-      console.log("[Profile Tab] Received message:", event.data);
       if (event.data?.type === "PROFILE_REFRESH") {
-        console.log("[Profile Tab] Refreshing data for:", username);
         queryClient.refetchQueries({ queryKey: ["PROFILES", username] });
       }
     };
 
-    return () => {
-      console.log("[Profile Tab] Closing BroadcastChannel: profile-sync");
-      channel.close();
-    };
+    return () => channel.close();
   }, [queryClient, username]);
 
   if (!data) return notFound();

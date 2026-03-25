@@ -13,12 +13,9 @@ export default function IPhoneMockup() {
   const url = `${process.env.NEXT_PUBLIC_BASE_URL}/${username}`;
 
   useEffect(() => {
-    console.log("[Dashboard] Initializing BroadcastChannel: profile-sync");
     const channel = new BroadcastChannel("profile-sync");
 
     const unsubscribe = queryClient.getQueryCache().subscribe((event) => {
-      console.log(event);
-
       if (
         event.type === "updated" &&
         event.action.type === "success" &&
@@ -26,7 +23,6 @@ export default function IPhoneMockup() {
           (event.query.queryKey as string[]).includes(key),
         )
       ) {
-        console.log("[Dashboard] Broadcasting PROFILE_REFRESH");
         channel.postMessage({ type: "PROFILE_REFRESH" });
       }
     });
