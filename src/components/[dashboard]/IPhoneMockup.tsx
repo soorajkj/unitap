@@ -1,12 +1,41 @@
 "use client";
 
 import { useProfileQuery } from "@/hooks/useProfilesQuery";
+import { useQueryClient } from "@tanstack/react-query";
+import { useEffect, useRef } from "react";
 
 export default function IPhoneMockup() {
   const { data: profile } = useProfileQuery();
+  const queryClient = useQueryClient();
+  const iframeRef = useRef<HTMLIFrameElement>(null);
 
   const username = profile?.username;
   const url = `${process.env.NEXT_PUBLIC_BASE_URL}/${username}`;
+
+  useEffect(() => {
+    console.log("[Dashboard] Initializing BroadcastChannel: profile-sync");
+    const channel = new BroadcastChannel("profile-sync");
+
+    const unsubscribe = queryClient.getQueryCache().subscribe((event) => {
+      console.log(event);
+
+      if (
+        event.type === "updated" &&
+        event.action.type === "success" &&
+        ["PROFILE", "LINKS", "HANDLES"].some((key) =>
+          (event.query.queryKey as string[]).includes(key),
+        )
+      ) {
+        console.log("[Dashboard] Broadcasting PROFILE_REFRESH");
+        channel.postMessage({ type: "PROFILE_REFRESH" });
+      }
+    });
+
+    return () => {
+      unsubscribe();
+      channel.close();
+    };
+  }, [queryClient]);
 
   return (
     <div
@@ -44,6 +73,7 @@ export default function IPhoneMockup() {
 
         {/* Screen */}
         <iframe
+          ref={iframeRef}
           src={url}
           style={{
             width: "100%",
