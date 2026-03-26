@@ -6,7 +6,7 @@ export default function Features() {
           <div className="grid place-items-center">
             <div className="w-full max-w-2xl space-y-4 text-center">
               <p className="font-mono text-sm text-neutral-300 uppercase">
-                <span className="text-neutral-600">[01]</span> Features
+                <span className="text-neutral-400">[01]</span> Features
               </p>
               <h2 className="font-display text-4xl text-balance text-white sm:text-4xl lg:text-5xl">
                 Everything You Need, Just One click Away

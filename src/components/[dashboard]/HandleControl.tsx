@@ -26,7 +26,13 @@ export default function HandleControl({ handle }: HandleControlProps) {
   return (
     <div ref={setActivatorNodeRef} className="relative">
       <div className="flex w-full items-center gap-px">
-        <Button {...listeners} {...attributes} variant="secondary" size="ism">
+        <Button
+          {...listeners}
+          {...attributes}
+          aria-label="Drag"
+          variant="secondary"
+          size="ism"
+        >
           <HugeiconsIcon icon={DragDropVerticalIcon} />
         </Button>
         <div className="flex w-full gap-2">
@@ -40,6 +46,7 @@ export default function HandleControl({ handle }: HandleControlProps) {
               <p className="text-base font-semibold">{handle.platform.name}</p>
             </div>
             <Button
+              aria-label="Edit"
               variant="secondary"
               size="ism"
               onClick={() => openEdit(handle.id)}

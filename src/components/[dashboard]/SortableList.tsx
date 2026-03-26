@@ -84,7 +84,7 @@ export default function SortableList<T extends SortableItemBase>({
       modifiers={[restrictToParentElement]}
       onDragEnd={handleDragEnd}
     >
-      <ul role="application" className={cn("w-full", className)}>
+      <ul className={cn("w-full", className)}>
         <SortableContext
           items={localItems.map((i) => i.id)}
           strategy={verticalListSortingStrategy}

@@ -22,6 +22,7 @@ export default function HandlesDisplay() {
           return (
             <Button
               key={platform.id}
+              aria-label={platform.name}
               onClick={() => openCreate()}
               className="relative inline-flex aspect-square size-7 shrink cursor-pointer items-center justify-center gap-1 rounded-full border border-dashed border-neutral-300 bg-neutral-50 text-sm whitespace-nowrap text-neutral-400 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0"
             >
@@ -40,6 +41,7 @@ export default function HandlesDisplay() {
         return (
           <Button
             key={handle.id}
+            aria-label={handle.platform.name}
             onClick={() => openEdit(handle.id)}
             className="relative inline-flex aspect-square size-7 shrink cursor-pointer items-center justify-center gap-1 rounded-lg border border-transparent bg-transparent text-sm whitespace-nowrap text-neutral-500 transition hover:bg-neutral-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-6 [&_svg]:shrink-0"
           >

@@ -38,7 +38,12 @@ export default function CreateHandle() {
       <Dialog.Trigger
         handle={dialog}
         render={
-          <Button variant="secondary" size="ism" onClick={() => openList()}>
+          <Button
+            variant="secondary"
+            size="ism"
+            onClick={() => openList()}
+            aria-label="Create handle"
+          >
             <HugeiconsIcon icon={Add01Icon} />
           </Button>
         }

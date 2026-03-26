@@ -70,6 +70,7 @@ export default function IPhoneMockup() {
         {/* Screen */}
         <iframe
           ref={iframeRef}
+          title="IPhone device preview"
           src={url}
           style={{
             width: "100%",

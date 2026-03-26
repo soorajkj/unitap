@@ -28,7 +28,7 @@ export default function EditLinkDialog({ link }: EditLinkDialogProps) {
           render={
             <Dialog.Trigger
               render={
-                <Button variant="secondary" size="ism">
+                <Button aria-label="Edit link" variant="secondary" size="ism">
                   <HugeiconsIcon icon={Edit03Icon} />
                 </Button>
               }

@@ -10,7 +10,7 @@ export default function Pricing() {
           <div className="grid place-items-center">
             <div className="w-full max-w-xl space-y-4 text-center">
               <p className="font-mono text-sm text-neutral-300 uppercase">
-                <span className="text-neutral-600">[02]</span> Pricing
+                <span className="text-neutral-400">[02]</span> Pricing
               </p>
               <h2 className="font-display text-4xl text-balance text-white sm:text-4xl lg:text-5xl">
                 Predictable pricing, design to scale

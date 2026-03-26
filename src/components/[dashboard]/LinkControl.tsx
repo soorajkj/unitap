@@ -40,6 +40,7 @@ export default function LinkControl({ link }: LinkControlProps) {
         <div className="flex items-center gap-px">
           <div className="ml-1 h-full">
             <Button
+              aria-label="Reorder link"
               variant="secondary"
               size="ism"
               {...listeners}
@@ -67,6 +68,7 @@ export default function LinkControl({ link }: LinkControlProps) {
                         delay={0}
                         render={
                           <Button
+                            aria-label="Favourite link"
                             variant="secondary"
                             size="ism"
                             onClick={() =>
@@ -98,6 +100,7 @@ export default function LinkControl({ link }: LinkControlProps) {
                         delay={0}
                         render={
                           <Button
+                            aria-label="Archive link"
                             variant="secondary"
                             size="ism"
                             onClick={() =>
@@ -124,7 +127,11 @@ export default function LinkControl({ link }: LinkControlProps) {
                       <Tooltip.Trigger
                         delay={0}
                         render={
-                          <Button variant="secondary" size="sm">
+                          <Button
+                            aria-label="Analytics"
+                            variant="secondary"
+                            size="sm"
+                          >
                             <HugeiconsIcon icon={Analytics01Icon} />
                             <span>12 Clicks</span>
                           </Button>
@@ -147,6 +154,7 @@ export default function LinkControl({ link }: LinkControlProps) {
                       delay={0}
                       render={
                         <Button
+                          aria-label="Delete link"
                           variant="secondary"
                           size="ism"
                           onClick={() => setIsDeleting((prev) => !prev)}

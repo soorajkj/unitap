@@ -10,7 +10,7 @@ export default function FAQs() {
           <div className="grid place-items-center">
             <div className="w-full max-w-xl space-y-4 text-center">
               <p className="font-mono text-sm text-neutral-300 uppercase">
-                <span className="text-neutral-600">[04]</span> FAQ&apos;s
+                <span className="text-neutral-400">[04]</span> FAQ&apos;s
               </p>
               <h2 className="font-display text-4xl text-balance text-white sm:text-4xl lg:text-5xl">
                 Still Unsure? Let’s Clear It Up

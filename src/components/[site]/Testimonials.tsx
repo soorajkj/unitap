@@ -12,7 +12,7 @@ export default function Testimonials() {
           <div className="grid place-items-center">
             <div className="w-full max-w-xl space-y-4 text-center">
               <p className="font-mono text-sm text-neutral-300 uppercase">
-                <span className="text-neutral-600">[03]</span> Testimonials
+                <span className="text-neutral-400">[03]</span> Testimonials
               </p>
               <h2 className="font-display text-4xl text-balance text-white sm:text-4xl lg:text-5xl">
                 Hear What People Are Saying
