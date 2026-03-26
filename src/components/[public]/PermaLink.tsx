@@ -25,22 +25,37 @@ export default function PermaLink({ data }: { data: Public }) {
       <p className="text-center text-neutral-400">{data?.bio}</p>
       <div className="flex flex-wrap items-center justify-center gap-1">
         {data?.phone && (
-          <Button className="relative inline-flex h-8 shrink cursor-pointer items-center justify-center gap-1 rounded-lg border border-transparent px-2 py-2 text-base leading-none whitespace-nowrap text-white transition hover:bg-neutral-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 [&_svg]:text-neutral-400">
-            <HugeiconsIcon icon={Call02Icon} strokeWidth={2} />
-            {data?.phone}
-          </Button>
+          <Button
+            render={
+              <a href={`tel:${data?.phone}`}>
+                <HugeiconsIcon icon={Call02Icon} strokeWidth={2} />
+                {data?.phone}
+              </a>
+            }
+            className="relative inline-flex h-8 shrink cursor-pointer items-center justify-center gap-1 rounded-lg border border-transparent px-2 py-2 text-base leading-none whitespace-nowrap text-white transition hover:bg-neutral-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 [&_svg]:text-neutral-400"
+          />
         )}
         {data?.website && (
-          <Button className="relative inline-flex h-8 shrink cursor-pointer items-center justify-center gap-1 rounded-lg border border-transparent px-2 py-2 text-base leading-none whitespace-nowrap text-white transition hover:bg-neutral-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 [&_svg]:text-neutral-400">
-            <HugeiconsIcon icon={Globe02Icon} strokeWidth={2} />
-            {data?.website}
-          </Button>
+          <Button
+            render={
+              <a href={data?.website} target="_blank" rel="noopener noreferrer">
+                <HugeiconsIcon icon={Globe02Icon} strokeWidth={2} />
+                {data?.website}
+              </a>
+            }
+            className="relative inline-flex h-8 shrink cursor-pointer items-center justify-center gap-1 rounded-lg border border-transparent px-2 py-2 text-base leading-none whitespace-nowrap text-white transition hover:bg-neutral-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 [&_svg]:text-neutral-400"
+          />
         )}
         {data?.email && (
-          <Button className="relative inline-flex h-8 shrink cursor-pointer items-center justify-center gap-1 rounded-lg border border-transparent px-2 py-2 text-base leading-none whitespace-nowrap text-white transition hover:bg-neutral-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 [&_svg]:text-neutral-400">
-            <HugeiconsIcon icon={Email} strokeWidth={2} />
-            {data?.email}
-          </Button>
+          <Button
+            render={
+              <a href={`mailto:${data?.email}`}>
+                <HugeiconsIcon icon={Email} strokeWidth={2} />
+                {data?.email}
+              </a>
+            }
+            className="relative inline-flex h-8 shrink cursor-pointer items-center justify-center gap-1 rounded-lg border border-transparent px-2 py-2 text-base leading-none whitespace-nowrap text-white transition hover:bg-neutral-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 disabled:pointer-events-none disabled:opacity-20 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 [&_svg]:text-neutral-400"
+          />
         )}
       </div>
       <UtilsGroup data={data} />

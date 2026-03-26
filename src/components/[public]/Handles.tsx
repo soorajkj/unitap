@@ -2,6 +2,7 @@ import { HugeiconsIcon } from "@hugeicons/react";
 import Link from "next/link";
 import type { Public } from "@/types/response";
 import { PLATFORM_ICONS, type PlatformIconKey } from "@/utils/icons";
+import { Route } from "next";
 
 export default function Handles({ data }: { data: Public }) {
   if (!data?.handles.length) return null;
@@ -13,7 +14,9 @@ export default function Handles({ data }: { data: Public }) {
         return (
           <li key={handle.id} className="relative aspect-square size-12">
             <Link
-              href="/"
+              href={handle.url as Route}
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label={handle.platform.name}
               className="relative flex size-full flex-col items-center justify-center overflow-hidden"
             >
